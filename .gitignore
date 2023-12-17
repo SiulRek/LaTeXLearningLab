@@ -1,1 +1,59 @@
 LaTeXLearningLab.code-workspace
+# LaTex related
+# General
+*.log
+*.aux
+*.glo
+*.idx
+*.toc
+*.ist
+*.acn
+*.acr
+*.alg
+*.bbl
+*.blg
+*.dvi
+*.glg
+*.gls
+*.ilg
+*.ind
+*.lof
+*.lot
+*.out
+*.toc
+*.auxlock
+*.nav
+*.snm
+*.vrb
+*.synctex.gz
+*.synctex(busy)
+*.fls
+*.fdb_latexmk
+*.pdfsync
+*.synctex
+*.synctex.gz(busy)
+*.run.xml
+*.bcf
+*-blx.aux
+*-blx.bib
+*.brf
+*.upb
+*.upa
+*.tdo
+*.loa
+*.thm
+# Editors
+*~
+.*.swp
+.*.swo
+*.sav
+*.bak
+*.old
+# OS generated files
+.DS_Store
+Thumbs.db
+# Temporary files from build
+/_minted-*
+*.bbl
+*.run.xml
+# Output
