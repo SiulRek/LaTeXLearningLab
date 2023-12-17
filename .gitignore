@@ -58,3 +58,4 @@ Thumbs.db
 *.bbl
 *.run.xml
 # Output
+*.pdf
