@@ -1,0 +1,60 @@
+% Preamble
+\documentclass[12pt]{report} % Defines the report document class with 12pt font size.
+\usepackage[utf8]{inputenc} % Allows the use of UTF-8 characters in the document.
+\usepackage[T1]{fontenc} % Enhances font encoding for European and extended character sets.
+\usepackage{graphicx} % Enables the inclusion and manipulation of graphics.
+\usepackage{listings} % Provides source code listings.
+\usepackage{amsmath} % Provides support for mathematical equations.
+\usepackage{float} % Provides additional options for figure placement such as H.
+\usepackage{hyperref} % Adds hyperlink capabilities to the document.
+\usepackage[nameinlink,noabbrev]{cleveref} % Provides support for clever references.
+\usepackage{chapterbib} % Provides support for multiple bibliographies in the document.
+\usepackage{lmodern} % Provides the Latin Modern font family.
+\usepackage[top=1in]{geometry} % Adjust the top margin
+\usepackage{fancyhdr} % Provides support for custom headers and footers.
+\usepackage[numbers]{natbib} %  Provides support for author-year citations. 
+%\usepackage{sloppy}
+% Usse CTAN to download the package and install it in your LaTeX distribution.
+
+
+% Custom styling
+\usepackage{styles/mystyle} % Loads defined custom styles.
+
+% Document begins here
+\begin{document}
+
+
+% Title page simple
+% \title{Title of the Document}
+% \author{Author}
+% \date{\today}
+% \maketitle
+% Title page with custom styling
+\input{titlepage/titlepage.tex}
+
+% Abstract
+\begin{abstract}
+This is the abstract of the document, providing a summary of the contents.
+\end{abstract}
+
+% Table of Contents
+\tableofcontents
+\newpage
+
+% Include chapters
+\input{chapters/content/content.tex}
+\input{chapters/references/references.tex}
+
+
+% Bibliography
+\newpage
+\bibliography{bibliography/references}
+
+% Appendices
+\appendix
+\input{appendices/appendixA}
+\input{appendices/appendixB}
+
+% End of the document
+\end{document}
+
