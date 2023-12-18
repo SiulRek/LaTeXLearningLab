@@ -1,0 +1,28 @@
+% mystyle.sty
+\ProvidesPackage{styles/mystyle}
+
+% Load any required packages
+\RequirePackage{graphicx}
+\RequirePackage{amsmath}
+\RequirePackage{xcolor}
+
+% Define custom commands or environments
+\newcommand{\important}[1]{\textbf{\color{red}#1}}
+
+% Custom settings for paragraphs
+\setlength{\parindent}{0pt} % Removes paragraph indentation
+\setlength{\parskip}{1em} % Adds space between paragraphs
+
+% Custom section headers
+\usepackage{titlesec}
+\titleformat{\section}
+  {\normalfont\Large\bfseries}{\thesection}{1em}{}
+
+% Document font size and layout
+\renewcommand{\normalsize}{\fontsize{12}{15}\selectfont}
+
+% Table and figure formatting
+\usepackage{float}
+\restylefloat{table}
+
+

@@ -1,0 +1,54 @@
+% Preamble
+\documentclass[12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx} % Allows including images
+\usepackage{hyperref} % Provides hyperlinks
+\usepackage{chapterbib}
+
+% Here you can include other packages you need for your document
+
+% Set up for the bibliography
+\usepackage{natbib}
+\bibliographystyle{plain}
+
+% Custom styling
+\usepackage{styles/mystyle} % Assuming you have custom styles defined
+
+% Document begins here
+\begin{document}
+
+% Title setup
+\title{My Structured Document}
+\author{Luis Kraker}
+\date{\today}
+
+% Create the title
+\maketitle
+
+% Abstract
+\begin{abstract}
+This is the abstract of the document, providing a summary of the contents.
+\end{abstract}
+
+% Table of Contents
+\tableofcontents
+\newpage
+
+% Include chapters
+\input{chapters/chapter01}
+\input{chapters/chapter02}
+\input{chapters/chapter03}
+
+
+% Bibliography
+\newpage
+\bibliography{bibliography/references}
+
+% Appendices
+\appendix
+\input{appendices/appendixA}
+\input{appendices/appendixB}
+
+% End of the document
+\end{document}
