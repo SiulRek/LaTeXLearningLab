@@ -5,15 +5,82 @@
 % Section title slide
 \sectiontitleframe{APPLIED ML METHODS}
 
-% Example frame 1
-\begin{frame}{frame} % set section name
-    \frametitle{frame}
+% Slide 1
+\begin{frame}{Regression Methods Overview}
+    \frametitle{Regression Methods Overview}
     \begin{itemize}
-        % Method Description
-        \item 4-5 slides
-        \item Describe and visualise selected ML/DL method (type, logic behind, evaluation performance methodology, framework, reason for selecting this method)
-        % Method Specification
-        \item 1 slide
-        \item Present selected method parameters and hyperparameters…
+        \item Linear regression is a fundamental statistical approach for modeling the relationship between a dependent variable and one or more independent variables.
+        \item Polynomial regression extends linear regression by considering polynomial features, allowing it to model non-linear relationships.
+        \item This approach is effective in revealing hidden patterns and relationships which are not observable in the original linear feature space.
     \end{itemize}
 \end{frame}
+
+% Slide 2
+\begin{frame}{Polynomial Feature Transformation}
+    \frametitle{Polynomial Feature Transformation}
+    \begin{itemize}
+        \item Polynomial features are created by raising each feature to the power of 2 (degree=2), thereby capturing not just the feature but also its squared effect.
+        \item This transformation increases the feature space from the original set to a much larger set, including original features, their squares, and interactions between pairs of features.
+        \item In our example the feature space increased from 83 to 3570.
+        \item Polynomial regression is suitable for house price prediction as it can account for the complex interplay of features.
+    \end{itemize}
+\end{frame}
+
+% Slide 3
+\begin{frame}[fragile]{Implementing Polynomial Feature Transformation}
+    \frametitle{Implementing Polynomial Feature Transformation}
+    \begin{lstlisting}[caption={Polynomial feature transformation using sklearn.preprocessing.}, label=lst:polynomial_feature_transformation]
+from (*@\module{sklearn.preprocessing}@*) import (*@\class{PolynomialFeatures}@*)
+poly_features = (*@\class{PolynomialFeatures}@*)(degree=2)
+poly_train = poly_features.fit_transform(X_train_selected)
+poly_test = poly_features.transform(X_test_selected)
+poly_val = poly_features.transform(X_val_selected)
+    \end{lstlisting}
+\end{frame}
+
+% Slide 4
+\begin{frame}{Implementing Regression Models}
+    \frametitle{Implementing Regression Models}
+    \begin{itemize}
+        \item Implemented Linear, Ridge, and Lasso Regression models using Scikit-learn on polynomial-transformed data.
+        \item Explored Ridge and Lasso Regression with varying alpha values (5, 10.0, 50, 100, 500, 1000) to understand the impact of regularization strength.
+        \item Evaluated models based on train and validation scores, specifically using R-squared as the performance metric.
+        \item Aimed to identify the best performing model with the highest R-squared score.
+    \end{itemize}
+\end{frame}
+
+%Slide 5
+\begin{frame}[fragile]{Linear Regression Model Implementation}
+    \frametitle{Linear Regression Model Implementation}
+    \begin{lstlisting}[caption={Implementing Linear Regression using sklearn.linear\_model.}, label=lst:linear_regression_implementation]
+from (*@\module{sklearn.linear\_model}@*) import (*@\class{LinearRegression}@*)
+import (*@\module{numpy}@*) as (*@\module{np}@*)
+from (*@\module{sklearn.metrics}@*) import mean_squared_error as mse
+# Linear Regression
+linear = (*@\class{LinearRegression}@*)()
+linear.fit(poly_train, y_train)
+train_score = linear.score(poly_train, y_train)
+val_score = linear.score(poly_val, y_val)
+y_pred = linear.predict(poly_val)
+rmse = (*@\module{np}@*).sqrt(mse((*@\module{np}@*).log(y_val), (*@\module{np}@*).log(y_pred)))
+    \end{lstlisting}
+\end{frame}
+
+
+        
+
+
+% Example frame 1
+% \begin{frame}{frame} % set section name
+%     \frametitle{frame}
+%     \begin{itemize}
+%         % Method Description
+%         \item 4-5 slides
+%         \item Describe and visualise selected ML/DL method (type, logic behind, evaluation performance methodology, framework, reason for selecting this method)
+%         % Method Specification
+%         \item 1 slide
+%         \item Present selected method parameters and hyperparameters…
+%     \end{itemize}
+% \end{frame}
+
+% Provide the slides here please

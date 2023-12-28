@@ -3,6 +3,7 @@
 \RequirePackage{listings}         % For code listings
 \RequirePackage{etoolbox}         % For programming tools, required if you're making tweaks like counters
 \RequirePackage{graphicx}         % For including images
+\RequirePackage{caption}          % For configuration of captions
 
 % Set Color for Theme
 \definecolor{customblue}{RGB}{209,124,66}
@@ -11,17 +12,18 @@
 % Adjust Line Spacing
 \linespread{1.5}
 
-% Beamer settings
+% Beamer Settings
 \usetheme{Madrid} % This theme has a clean and professional look
+
+% Caption Settings
 \setbeamertemplate{caption}[numbered] % Enables figure numbering
+\captionsetup[figure]{skip=0pt}
 
-
-% Table of Contents settings
+% Table of Contents Settings
 \definecolor{tocText}{RGB}{30,80,100}
 \setbeamertemplate{section in toc}[sections numbered]
 \setbeamerfont{section in toc}{size=\large}
 \setbeamerfont{subsection in toc}{size=\small}
-
 
 % custom command
 \newcommand{\sectiontitleframe}[1]{
@@ -36,6 +38,10 @@
 } % Set up section title frame.
 
 % Listings settings
+\definecolor{classcolor}{rgb}{0,0.6,0} % Green for classes
+\definecolor{modulecolor}{rgb}{0,0.4,0} % Slightly darker green for modules
+\newcommand{\class}[1]{\textcolor{classcolor}{\textbf{#1}}}
+\newcommand{\module}[1]{\textcolor{modulecolor}{\textbf{#1}}}
 \lstset{
   language=Python,
   basicstyle=\ttfamily\small,
@@ -65,4 +71,5 @@
   showspaces=false,                 % Don't underscore spaces within code
   showstringspaces=false,           % Don't underscore spaces within strings
   showtabs=false,                   % Don't underscore tabs within strings
+  escapeinside={(*@}{@*)},          % For comments within code
 }
