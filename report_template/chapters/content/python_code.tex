@@ -3,14 +3,14 @@
 
 This section includes an example of how to include a Python code snippet in your LaTeX document.
 
-\begin{lstlisting}[caption=Python example, label=lst:python_code]
+\begin{lstlisting}[caption=Python Example, label=lst:python_code]
+from sklearn.linear_model import (*@\class{LinearRegression}@*)
+   LinearRegression 
     # Python code example
-    def my_function(param1, param2):
-        """This is a docstring."""
-        if param1 and param2:
-            print(True)
-        else:
-            print(False)
+    def calculate_sum(a, b):
+        """This function calculates the sum of two numbers."""
+        return a + b
     
-    my_function(True, False)
+    result = calculate_sum(3, 4)
+    print(f"The sum is: {result}")
 \end{lstlisting}

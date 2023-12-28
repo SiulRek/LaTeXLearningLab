@@ -92,6 +92,10 @@
 
 % Configure the "listings" package to display Python code
 \renewcommand{\lstlistingname}{Code} % Change the caption label to "Code"
+\definecolor{classcolor}{rgb}{0,0.6,0} % Green for classes
+\definecolor{modulecolor}{rgb}{0,0.4,0} % Slightly darker green for modules
+\newcommand{\class}[1]{\textcolor{classcolor}{\textbf{#1}}}
+\newcommand{\module}[1]{\textcolor{modulecolor}{\textbf{#1}}}
 \lstset{
   language=Python,
   basicstyle=\ttfamily\small,
@@ -110,8 +114,9 @@
   backgroundcolor=\color{white},    % Background color for the code
   frame=single,                     % Frame around the code
   frameround=fttt,
-  framesep=3pt,                     % Distance of frame from the code
-  framexleftmargin=11pt,          % Adjust the frame margin to fit line numbers
+  framesep=5pt,                     % Increase distance of frame from the code
+  framexleftmargin=8pt,             % Space on the left side inside the frame
+  xleftmargin=8pt,                  % Space on the left side outside the frame
   rulecolor=\color{black},          % If not set, the frame-color may be changed on line-breaks within not-black text
   tabsize=2,                        % Sizes of tabs
   captionpos=b,                     % Caption-position at bottom
@@ -120,9 +125,6 @@
   showspaces=false,                 % Don't underscore spaces within code
   showstringspaces=false,           % Don't underscore spaces within strings
   showtabs=false,                   % Don't underscore tabs within strings
-  numbers=left,                    % Show line numbers on the left
-  numberstyle=\small\color{gray},   % Style for the line numbers
-  stepnumber=1,                    % The step between two line numbers. The default is 1.
-  numbersep=6pt,                  % How far the line-numbers are from the code
-  }
+  escapeinside={(*@}{@*)},          % For comments within code
+}
   
