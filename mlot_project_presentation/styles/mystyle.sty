@@ -4,10 +4,14 @@
 \RequirePackage{etoolbox}         % For programming tools, required if you're making tweaks like counters
 \RequirePackage{graphicx}         % For including images
 \RequirePackage{caption}          % For configuration of captions
+\RequirePackage{float}          % For configuration of captions
 
 % Set Color for Theme
 \definecolor{customblue}{RGB}{209,124,66}
 \usecolortheme[named=customblue]{structure}
+
+% Bibliography Settings
+\renewcommand*{\bibfont}{\scriptsize}
 
 % Adjust Line Spacing
 \linespread{1.5}
@@ -36,6 +40,10 @@
         \vfill
     \end{frame}
 } % Set up section title frame.
+    
+% Custom table formatting
+\floatstyle{plaintop}
+\restylefloat{table} % Caption to the top of the table
 
 % Listings settings
 \definecolor{classcolor}{rgb}{0,0.6,0} % Green for classes

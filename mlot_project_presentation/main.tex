@@ -3,10 +3,12 @@
 \usepackage[T1]{fontenc} % Add this line to fix the font shape problem.
 \usepackage[utf8]{inputenc} % Allows the use of UTF-8 characters in the document.
 \usepackage{FiraSans} % Ensures the Fira Sans font is used
+\usepackage{float} % For table positioning
 \usepackage{textpos} % for absolute positioning of the date
 \usepackage{xcolor}
+\usepackage{colortbl}
 \usepackage{listings} % For code listing
-\usepackage[backend=biber, style=numeric]{biblatex} % Modern bibliography
+\usepackage[backend=biber, style=numeric, sorting=none]{biblatex} % Modern bibliography
 \addbibresource{bibliography/references.bib}
 
 % Custom styling
@@ -25,14 +27,7 @@
     \input{section/applied_ml_methods.tex}
     \input{section/results_and_discussions.tex}
     \input{section/conclusion.tex}
-    % \input{section/text.tex}
-    % \input{section/image.tex}
-    % \input{section/table.tex}
-    % \input{section/pyton_code.tex}
-    % \input{section/citations.tex}
-
-    % \begin{frame}[allowframebreaks]{References}
-    %     \printbibliography
-    % \end{frame}
-
+    \begin{frame}[allowframebreaks]{References}
+        \printbibliography
+    \end{frame}
 \end{document}

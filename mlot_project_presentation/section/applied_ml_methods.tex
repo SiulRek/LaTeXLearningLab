@@ -29,7 +29,7 @@
 % Slide 3
 \begin{frame}[fragile]{Implementing Polynomial Feature Transformation}
     \frametitle{Implementing Polynomial Feature Transformation}
-    \begin{lstlisting}[caption={Polynomial feature transformation using sklearn.preprocessing.}, label=lst:polynomial_feature_transformation]
+    \begin{lstlisting}[caption={Polynomial feature transformation using \texttt{sklearn.preprocessing}.}, label=lst:polynomial_feature_transformation]
 from (*@\module{sklearn.preprocessing}@*) import (*@\class{PolynomialFeatures}@*)
 poly_features = (*@\class{PolynomialFeatures}@*)(degree=2)
 poly_train = poly_features.fit_transform(X_train_selected)
@@ -54,15 +54,14 @@ poly_val = poly_features.transform(X_val_selected)
     \frametitle{Linear Regression Model Implementation}
     \begin{lstlisting}[caption={Implementing Linear Regression using sklearn.linear\_model.}, label=lst:linear_regression_implementation]
 from (*@\module{sklearn.linear\_model}@*) import (*@\class{LinearRegression}@*)
-import (*@\module{numpy}@*) as (*@\module{np}@*)
 from (*@\module{sklearn.metrics}@*) import mean_squared_error as mse
+
 # Linear Regression
 linear = (*@\class{LinearRegression}@*)()
 linear.fit(poly_train, y_train)
 train_score = linear.score(poly_train, y_train)
 val_score = linear.score(poly_val, y_val)
 y_pred = linear.predict(poly_val)
-rmse = (*@\module{np}@*).sqrt(mse((*@\module{np}@*).log(y_val), (*@\module{np}@*).log(y_pred)))
     \end{lstlisting}
 \end{frame}
 
