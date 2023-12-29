@@ -1,0 +1,6 @@
+# My First Document
+This folder hosts my initial LaTeX document, based on Federico Tartarini's tutorial.
+
+## Contents
+- **[main.tex](main.tex)**: Main LaTeX document, titled "youtube get stopped" by Federi Tartarini (April 2020). Includes sections on Introduction, Methodology, Results, Conclusion, and a figure of the universe.
+- **[references.bib](references.bib)**: Bibliography file in BibTeX format with references, including "The Hitchhiker's Guide to the Galaxy" and an academic article.
