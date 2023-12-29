@@ -12,7 +12,7 @@
         \item Created by Dean De Cock for educational purposes.
         \item Already splitted into training and test set.
         \item 37 numerical, 43 categorical and 1 target variables.
-        \item Feature examples: 'LotArea', 'YearBuilt', 'KitchenQual', etc.
+        \item Feature examples: \texttt{'LotArea'}, \texttt{'YearBuilt'}, \texttt{'KitchenQual'}, etc.
     \end{itemize}
     \vspace{0.5cm}
     \begin{figure}
@@ -60,7 +60,7 @@
         Maximum & \$755,000.00 \\
         \hline
         \end{tabular}
-        \caption{Descriptive Statistics of SalePrice (Training Set).}
+        \caption{Descriptive Statistics of \texttt{'SalePrice'} (Training Set).}
         \label{tab:saleprice_stats}
     \end{table}        
 \end{frame}
@@ -82,7 +82,7 @@
     \frametitle{Data Organization}
     \begin{itemize}
         \item Organized training data into feature matrix \(X_{\text{train}}\) and target vector \(y_{\text{train}}\).
-        \item Dropped 'SalePrice' from feature matrix and assigned to target vector.
+        \item Dropped \texttt{'SalePrice'} from feature matrix and assigned to target vector.
         \item Separated categorical and numerical columns for further processing.
     \end{itemize}
     \begin{table}[H]
@@ -117,9 +117,9 @@
     \frametitle{Feature Selection Methodology}
     \begin{itemize}
         \item Employed Recursive Feature Elimination with Cross-Validation (RFECV) for feature selection.
-        \item Used `XGBRFRegressor` as the estimator to assess feature importances.
+        \item Used \texttt{XGBRFRegressor} as the estimator to assess feature importances.
         \item Random forest regressor was chosen due to its robustness to outliers and non-linear relationships.
-        \item `RFECV` iteratively fits the model and removes the least significant features until the optimal number is achieved.
+        \item \texttt{RFECV} iteratively fits the model and removes the least significant features until the optimal number is achieved.
         \item Cross-validation with 5 folds was applied to ensure robust feature selection.
     \end{itemize}
 \end{frame}
