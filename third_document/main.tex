@@ -6,14 +6,12 @@
 \usepackage{hyperref} % Provides hyperlinks
 \usepackage{chapterbib}
 
-% Here you can include other packages you need for your document
+% Additional packages and custom styling
+\usepackage{styles/mystyle} % Assuming you have custom styles defined
 
 % Set up for the bibliography
 \usepackage{natbib}
 \bibliographystyle{plain}
-
-% Custom styling
-\usepackage{styles/mystyle} % Assuming you have custom styles defined
 
 % Document begins here
 \begin{document}
@@ -28,7 +26,7 @@
 
 % Abstract
 \begin{abstract}
-This is the abstract of the document, providing a summary of the contents.
+    This is the abstract of the document, providing a summary of the contents.
 \end{abstract}
 
 % Table of Contents
@@ -39,7 +37,6 @@ This is the abstract of the document, providing a summary of the contents.
 \input{chapters/chapter01}
 \input{chapters/chapter02}
 \input{chapters/chapter03}
-
 
 % Bibliography
 \newpage
