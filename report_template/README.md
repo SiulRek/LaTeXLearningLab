@@ -15,6 +15,7 @@ This repository contains a LaTeX report template showing various features such a
   - **[appendixA.tex](appendices/appendixA.tex)**
   - **[appendixB.tex](appendices/appendixB.tex)**
 - **[bibliography/references.bib](bibliography/references.bib)**: Bibliography file.
+- **[main.pdf](main.pdf)**: Output PDF document compiled from main.tex.
 
 ## Template Features
 

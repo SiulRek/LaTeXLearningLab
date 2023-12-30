@@ -12,6 +12,8 @@ This folder contains my third LaTeX document, where I've started using a structu
     - **[appendixA.tex](appendices/appendixA.tex)**: The first appendix of the document.
     - **[appendixB.tex](appendices/appendixB.tex)**: The second appendix of the document.
 - **[bibliography/references.bib](bibliography/references.bib)**: The bibliography file used in the document.
+- **[main.pdf](main.pdf)**: Output PDF document compiled from main.tex.
+
 
 ## Overview
 This document demonstrates:

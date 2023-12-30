@@ -16,7 +16,9 @@ This folder contains a LaTeX Beamer presentation template, demonstrating how to 
   - **[Python Code Section](section/python_code.tex)**: Python code listing and reference.
   - **[Citations Section](section/citations.tex)**: Citations and references.
 - **Bibliography**:
-  - **[references.bib](bibliography/references.bib)**
+  - **[references.bib](bibliography/references.bib)**: Bibliography file in BibTeX format with references, including "The Hitchhiker's Guide to the Galaxy" and an academic article.
+- **[main.pdf](main.pdf)**: Output PDF document compiled from main.tex.
+
 
 ## Features
 
