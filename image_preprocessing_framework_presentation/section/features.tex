@@ -1,0 +1,87 @@
+% Section and Frames
+\section{Key Features of the Framework}
+\label{key_features_section}
+
+% Section title frame
+\sectiontitleframe{Key Features of the Framework}
+
+\begin{frame}{Key Features - Overview}
+    \frametitle{Key Features - Overview}
+    The Image Preprocessing Framework is designed with key features to fullfill the requirements from chapter \ref{defining_framework_requirements_section}:
+    \begin{itemize}
+        \item \textbf{Serialization and Deserialization:}  Allows simple saving and loading of preprocessing configurations using JSON.
+        \item \textbf{Parameter Randomization:}  Allows the experimentation with randomized preprocessing parameters for hyperparameter tuning.
+        \item \textbf{Flexibility and Modularity:} Enables straightforward integration and customization of various preprocessing steps.
+    \end{itemize}
+    %These features combined give the framework flexibility, efficiency, and suitability for a variety of preprocessing taks.
+\end{frame}
+
+\begin{frame}[fragile]{Serialization and Deserialization}
+    \frametitle{Serialization and Deserialization}
+    The framework provides functionality for serialization and deserialization of the preprocessing pipeline:
+
+    \begin{lstlisting}[caption={Serialization and Deserialization Example.}, label=lst:serialization]
+# Serialize pipeline to JSON
+preprocessor.save_pipe_to_json('pipeline_config.json')
+
+# Deserialize pipeline from JSON
+loaded_pipeline = preprocessor.load_pipe_from_json('pipeline_config.json')
+
+# Deserialize randomized pipeline from JSON
+loaded_pipeline = preprocessor.load_randomized_pipe_from_json('pipeline_config.json')
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{JSON Entry - Standard Configuration}
+    \frametitle{JSON Entry - Standard Configuration}
+    Example of a standard, non-randomized JSON entry for pipeline configuration:
+
+    \begin{lstlisting}[caption={Standard JSON Configuration.}, label=lst:json_standard, basicstyle=\scriptsize\ttfamily, stringstyle=\color{black}]
+{
+    "Adaptive Histogram Equalizer": {
+        "clip_limit": 4.0,
+        "tile_gridsize": [4, 4]
+    },
+    "Shape Resizer": {
+        "desired_shape": [2000, 2000],
+        "resize_method": "bilinear"
+    },
+    "Mean Normalizer": {}
+}
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{JSON Entry - Randomized Configuration}
+    \frametitle{JSON Entry - Randomized Configuration}
+    Example of a randomized JSON entry for pipeline configuration:
+
+    \begin{lstlisting}[caption={Randomized JSON Configuration.}, label=lst:json_randomized, basicstyle=\scriptsize\ttfamily, stringstyle=\color{black}]
+{
+    "Adaptive Histogram Equalizer": {
+        "clip_limit": {"distribution": "poisson", "lam": 3}
+        "tile_gridsize": [[3,3],[5,5],[7,7]],
+    },
+    "Shape Resizer": {
+        "desired_shape": "[[2000,2000]]*5 + [[1500,1500]]*4",
+        "resize_method": ["bilinear", "bilinear", "nearest", "bicubic"]
+    },
+    "Mean Normalizer": {}
+}
+    \end{lstlisting}
+\end{frame}
+
+\section{Live Code Demonstration}
+\label{live_code_demonstration_section}
+
+\begin{frame}{Live Code Demonstration}
+    \frametitle{Live Code Demonstration}
+    \begin{center}
+        \LARGE{Live Demonstration of the Framework}
+    \end{center}
+    \vspace{1em}
+    \begin{figure}
+        \includegraphics[width=0.4\textwidth]{figures/live_demo.jpg} 
+        \sourcespec{ericksonlive2023laboratorio}{Un laboratorio per ogni fiaba}
+        \label{fig:sampleimage}
+      \end{figure}
+\end{frame}

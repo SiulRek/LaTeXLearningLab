@@ -1,0 +1,55 @@
+% Section and Frames
+\section{Defining Framework Requirements}
+\label{defining_framework_requirements_section}
+
+% Section title frame
+\sectiontitleframe{Defining Framework Requirements}
+
+\begin{frame}[fragile]{Early Image Preprocessing Efforts}
+    \frametitle{Early Image Preprocessing Efforts}
+    \begin{lstlisting}[
+        caption={Error Prone Implementation of Preprocessing Steps.}, 
+        label=lst:histogramequalization
+    ]
+def global_histogram_equalization(image_tensor, target_tensor):
+    cv_img = image_tensor.numpy().astype('uint8')
+    channels = (*@\module{cv2}@*).split(cv_img)
+    eq_channels = [(*@\module{cv2}@*).equalizeHist(ch) for ch in channels]  
+    cv2_eq_image = (*@\module{cv2}@*).merge(eq_channels)
+    tf_eq_image = (*@\module{tf}@*).convert_to_tensor(cv2_eq_image, dtype=tf.uint8) 
+    return (tf_eq_image, target_tensor)
+
+image_dataset_equalized_glo = image_dataset.map(
+    lambda img, tgt: (*@\module{tf}@*).py_function(
+        func=global_histogram_equalization, 
+        inp=[img, tgt], 
+        Tout=((*@\module{tf}@*).uint8, (*@\module{tf}@*).int8)
+    ))
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}{Framework Requirements}
+    \frametitle{Framework Requirements}
+    The need for systematic image data preparation motivated the development of the \textbf{Image Preprocessing Framework}. The main requirements for the framework were:
+    \vspace{0.5em}
+    \begin{itemize}
+        \item \textbf{Sequence Flexibility} % To ensure smooth transitions between preprocessing steps without misalignments or errors.
+        \item \textbf{Ease of Parameter Experimentation} % To enable dynamic tuning of preprocessing parameters for optimization.
+        \item \textbf{Reproducibility} % To allow serialization of steps for consistent application and result comparison.
+        \item \textbf{Modularity} % To facilitate the inclusion of preprocessing sequences into larger systems for easy reuse.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Implementation of Framework Requirements}
+    \frametitle{Implementation of Framework Requirements}
+    % Building on the established requirements, the Image Preprocessing 
+    \textbf{Image Preprocessing Framework key implementations:}
+    \vspace{0.5em}
+    \begin{itemize}
+        \item \textbf{Serialization:} Enables the serialization of complete pipeline configurations, allowing for the easy saving and loading of preprocessing settings.
+        \item \textbf{Parameter Randomization:} Introduces the ability to specify distributions or ranges for parameters, which can then be randomly assigned.
+        \item \textbf{Quality Assurance through Testing:} Usage of a systematic testing approach to ensure each software component functions correctly and integrates flawlessly within the framework.
+    \end{itemize}
+\end{frame}
+
+
