@@ -1,0 +1,170 @@
+% This CV is a personal introduction based on the following template:
+% LetzCV-sleek 1.0 LaTeX template
+% Author: Andreï V. Kostyrka, University of Luxembourg
+%
+% This template fills the gap in the available variety of templates
+% by proposing something that is not a custom class, not using any
+% hard-coded settings deeply hidden in style files, and provides
+% a handful of custom command definitions that are as transparent as it gets.
+% Developed at the University of Luxembourg.
+%
+% *NOTHING IS HARCODED, and never should be.*
+%
+% Target audience: applicants in the IT industry, or business in general
+%
+% The main strength of this template is, it explicitly showcases how
+% to break the flow of text to achieve the most flexible right alignment
+% of dates for multiple configurations.
+
+\documentclass[11pt, a4paper]{article} 
+
+\usepackage[T1]{fontenc}     % We are using pdfLaTeX,
+\usepackage[utf8]{inputenc}  % hence this preparation
+\usepackage[british]{babel}  
+\usepackage[left = 0mm, right = 0mm, top = 0mm, bottom = 0mm]{geometry}
+\usepackage[stretch = 25, shrink = 25]{microtype}  
+\usepackage{graphicx}        % To insert pictures
+\usepackage{xcolor}          % To add colour to the document
+\usepackage{marvosym}        % Provides icons for the contact details
+
+\usepackage{enumitem}        % To redefine spacing in lists
+\setlist{parsep = 0pt, topsep = 0pt, partopsep = 1pt, itemsep = 1pt, leftmargin = 6mm}
+
+\usepackage{FiraSans}        % Change this to use any font, but keep it simple
+\renewcommand{\familydefault}{\sfdefault}
+
+\definecolor{cvblue}{HTML}{304263}
+\definecolor{brown}{RGB}{64,38,26}
+%%%%%%% USER COMMAND DEFINITIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%
+% These are the real workhorses of this template
+\newcommand{\dates}[1]{\hfill\mbox{\textbf{#1}}} % Bold stuff that doesn’t got broken into lines
+\newcommand{\is}{\par\vskip.5ex plus .4ex} % Updated item spacing
+\newcommand{\smaller}[1]{{\small$\diamond$\ #1}}
+\newcommand{\headleft}[1]{\vspace*{3ex}\textsc{\textbf{#1}}\par%
+    \vspace*{-1.5ex}\hrulefill\par\vspace*{0.7ex}}
+\newcommand{\headright}[1]{\vspace*{2.5ex}\textsc{\Large\color{brown}#1}\par%
+     \vspace*{-2ex}{\color{brown}\hrulefill}\par}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[colorlinks = true, urlcolor = white, linkcolor = white]{hyperref}
+
+\begin{document}
+
+% Style definitions
+% Style definitions -- killing the unnecessary space and adding the skips explicitly
+\setlength{\topskip}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\fboxsep}{0pt}
+\pagestyle{empty}
+\raggedbottom
+
+\begin{minipage}[t]{0.33\textwidth} 
+\colorbox{brown}{\begin{minipage}[t][5mm][t]{\textwidth}\null\hfill\null\end{minipage}}
+\vspace{-.2ex} 
+\colorbox{brown!90}{\color{white}
+\kern0.09\textwidth\relax
+\begin{minipage}[t][293mm][t]{0.805\textwidth\relax}
+\raggedright
+\vspace*{2.5ex}
+
+% Profile Name
+\Large Luis \textbf{\textsc{Kraker}} \normalsize 
+
+% Centering without extra vertical spacing
+\null\hfill\includegraphics[width=0.65\textwidth]{profile_photo.png}\hfill\null
+
+\vspace*{0.5ex} % Extra space after the picture
+
+% Profile Summary
+\headleft{Profile}
+A Master's student in System Test Engineering with a growing passion for software automation and programming, especially Python. Eager to apply foundational concepts such as Object-Oriented Programming and Test-Driven Development in practical scenarios.
+
+% Contact Details
+\headleft{Contact details}
+\small
+\MVAt\ {\small luis.kraker@edu.fh-joanneum.at} \\[0.4ex]
+\Mobilefone\ +55 53245 453453!!!!!! \\[0.5ex]
+\Mundus\ \href{https://github.com/SiulRek}{github.com/SiulRek} \\[0.1ex]
+\Letter\ !!!!!!!!!!!!!!
+\normalsize
+
+% Skills
+\headleft{Skills}
+\begin{itemize}
+\item Intermediate Python and LabVIEW; 
+\item Basic C, MATLAB
+\item Microsoft Office Suite
+\item Languages: German (Native), English (Fluent), Italian (C1), Spanish
+\end{itemize} 
+
+\end{minipage}
+\kern0.09\textwidth\relax
+}
+\end{minipage}
+\hskip2.5em
+\begin{minipage}[t]{0.56\textwidth}
+\setlength{\parskip}{0.8ex}
+
+% Experiences
+\headright{Professional Experience}
+
+\textsc{Student Research Assistant, ENDLESS Project, FH Joanneum}  \\
+\smaller{Engaged in a PCB Defect Detection project focusing on image-based machine learning.} \dates{2024.01--Present}
+
+\is
+\textsc{Internship, NXP Semiconductors}  \dates{2022.03--2022.08} \\
+\smaller{Worked on software modules for data logging with LabVIEW, PCB design with Altium Designer, circuit simulation using LTspice and firmware development.}
+
+% Additional Work Experience
+\is
+\textsc{Additional General Work Experience}  \dates{2016--2018} \\
+\smaller{Internship at Mercedes Autoindustriale Bruneck (Summer 2018).}\\
+\smaller{Salesperson at Christmas Market Bruneck (December 2017, December 2018).}\\
+\smaller{caretaker assistant at the swimming pool CRON4 in Bruneck (Summer 2016, Summer 2017).}
+
+% Education
+\headright{Educational Background}
+
+\textsc{Master's Degree in System Test Engineering} \dates{2022.10--Present} \\
+\textit{FH JOANNEUM, Graz}
+
+\is
+\textsc{Bachelor's Degree in Electronics and Computer Engineering}  \\
+\textit{FH JOANNEUM, Graz} \dates{2019.10--2022.09}
+
+\is
+\textsc{Secondary Education} \dates{2014--2019} \\
+\textit{Nikolaus Cusanus Gymnasium, Bruneck}
+
+% Project Experience
+\headright{Project Experience}
+
+\textsc{PDF Manipulator Application} \dates{2023.09--2023.10} \\
+\smaller{Developed a GUI-based application for editing and concatenating PDF files with Python.}
+
+\is
+\textsc{Image Preprocessing Framework for PCB Defect Detection} \\
+\smaller{Created a modular framework to enhance image processing for defect detection in PCBs with Python.} \dates{2023.11--2023.01}
+
+\is
+\textsc{Bachelor Thesis: Electrical Transient Disturbance Emulator Development} \\
+\smaller{Developed an emulator for predicting electronic product behavior under electrical disturbances in collaboration with NXP Semiconductors Austria. Involved DAC-controlled microcontroller design and circuit integration, validated by simulation.} \dates{2022.05--2022.08}
+
+% Certifications (continued)
+\headright{Certifications}
+\textsc{Certified LabVIEW Developer} \dates{July 2022} \\
+\smaller{Demonstrated proficiency in LabVIEW development.}
+\is
+\textsc{Certified Lifeguard (Bademeister)} \dates{2017} \\
+\smaller{Earned lifeguard certification, showcasing commitment to safety and responsibility.}
+
+% Hobbies
+\headright{Hobbies}
+
+\textit{Personal Interests:} Enjoying an active lifestyle with regular walks and exercise. Valuing quality time with friends and family. Committed to personal productivity and personal growth, with a focus on engaging experiences.
+
+\end{minipage}
+
+\end{document}
+
