@@ -81,8 +81,8 @@
 \begin{frame}{Data Organization}
     \frametitle{Data Organization}
     \begin{itemize}
-        \item Organized training data into feature matrix \(X_{\text{train}}\) and target vector \(y_{\text{train}}\).
-        \item Dropped \texttt{'SalePrice'} from feature matrix and assigned to target vector.
+        \item Organized training data into feature matrix \(X_{\text{train}}\).
+        \item Dropped \texttt{'SalePrice'} from feature matrix and assigned to target vector \(y_{\text{train}}\).
         \item Separated categorical and numerical columns for further processing.
     \end{itemize}
     \begin{table}[H]
@@ -93,7 +93,7 @@
         \textbf{Column Type} & \textbf{Count} \\
         \hline
         Categorical Columns & 43 \\
-        Numerical Columns & 37 \\
+        Numerical Columns & 36 \\
         \hline
         \end{tabular}
         \caption{Count of Categorical and Numerical Columns.}

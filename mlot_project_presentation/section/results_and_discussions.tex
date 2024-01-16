@@ -15,8 +15,8 @@
         \hline
         \textbf{Model} & \textbf{Train Score} & \textbf{Validation Score} \\
         \hline
-        Linear Regression & 1.0 & 0.7262 \\
         Linear Regression (Degree 1) & 0.9358 & 0.0000 \\
+        Linear Regression & 1.0 & 0.7262 \\
         Ridge (alpha=5) & 0.9980 & 0.8370 \\
         Ridge (alpha=10.0) & 0.9963 & 0.8518 \\
         Ridge (alpha=50) & 0.9893 & 0.8813 \\
@@ -54,16 +54,15 @@ rmse = (*@\module{np}@*).sqrt(mse((*@\module{np}@*).log(y_val), (*@\module{np}@*
 \end{frame}
 
 
-% Example frame 1
-% \begin{frame}{frame} % set section name
-%     \frametitle{frame}
-%     \begin{itemize}
-%         % Final Results
-%         \item 1-2 slides
-%         \item Present final results in a form requested by the challenge
-%         \item Present additional figures of merit if it make sense
-%         % Comparison
-%         \item 1-2 slides
-%         \item compare your results to the leaderboard
-%     \end{itemize}
-% \end{frame}
+% Slide for Leaderboard Comparison
+\begin{frame}{Kaggle Leaderboard Comparison}
+    \frametitle{Kaggle Leaderboard Comparison}
+    The solution reached Position 3024 on the Kaggle leaderboard.
+    \vspace{0.5em}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{figures/leaderboard_comparison.png}
+        \caption{Kaggle Leaderboard Comparison.}
+        \label{fig:leaderboard_comparisom}
+    \end{figure}
+\end{frame}
