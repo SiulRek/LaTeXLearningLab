@@ -14,6 +14,13 @@ This repository is dedicated to my journey in learning LaTeX. This repository co
   - [Report Template README](report_template/README.md)
 - **Presentation Template**: A Beamer presentation template, highlighting various presentation elements in LaTeX.
   - [Presentation Template README](presentation_template/README.md)
+- **Master Thesis Template**: A LaTeX template provided by Mayer Florian and slightly changed for simplified usage by me for writing the master's thesis. 
+  - [Master Thesis Template README](master_thesis_template/README.md)
+
+## Additional Resources
+
+- [Real Documents Folder](real_documents/): Contains a collection of real documents I have created.
+- [Feature Demos Folder](feature_demos/): Showcases examples of various LaTeX features and how to use them.
 
 ## Purpose
 
