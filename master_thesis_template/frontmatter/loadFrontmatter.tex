@@ -1,0 +1,20 @@
+%%%% Modify your titlepage by configuring "frontmatter/tpThesis.tex" or "frontmatter/tpReport.tex"
+%%% BEGIN FRONTMATTER
+\ifthenelse{\equal{\DocType}{\Thesis}}
+{
+	\input{frontmatter/tpThesis}
+	\input{frontmatter/titlepage}
+	\newpage	
+	\input{frontmatter/declaration}
+	\ifthenelse{\equal{\DegProg}{\ECE}}
+	{
+		\input{frontmatter/kurzfassung}
+	}{}	
+	\newpage
+	\input{frontmatter/abstract}
+	\input{frontmatter/acknowledgments.tex}
+	%\input{frontmatter/glossaries.tex}
+}
+{
+}
+%%% END FRONTMATTER

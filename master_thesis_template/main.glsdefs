@@ -1,0 +1,1036 @@
+\glsdefs@newdocentry{SCSS}%
+{%
+name={SCSS},%
+sort={SCSS},%
+type={main},%
+first={SCSS},%
+firstplural={SCSSs},%
+text={SCSS},%
+plural={SCSSs},%
+description={Single Channel Source Separation},%
+descriptionplural={Single Channel Source Separation},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ITD}%
+{%
+name={ITD},%
+sort={ITD},%
+type={main},%
+first={ITD},%
+firstplural={ITDs},%
+text={ITD},%
+plural={ITDs},%
+description={Interaural Time Difference},%
+descriptionplural={Interaural Time Difference},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{PASCSS}%
+{%
+name={PASCSS},%
+sort={PASCSS},%
+type={main},%
+first={PASCSS},%
+firstplural={PASCSSs},%
+text={PASCSS},%
+plural={PASCSSs},%
+description={Phase-Aware Single Channel Source Separation},%
+descriptionplural={Phase-Aware Single Channel Source Separation},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{CASA}%
+{%
+name={CASA},%
+sort={CASA},%
+type={main},%
+first={CASA},%
+firstplural={CASAs},%
+text={CASA},%
+plural={CASAs},%
+description={Computational Auditory Scene Analysis},%
+descriptionplural={Computational Auditory Scene Analysis},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{NMF}%
+{%
+name={NMF},%
+sort={NMF},%
+type={main},%
+first={NMF},%
+firstplural={NMFs},%
+text={NMF},%
+plural={NMFs},%
+description={Non-Negative Matrix Factorization},%
+descriptionplural={Non-Negative Matrix Factorization},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{CMF}%
+{%
+name={CMF},%
+sort={CMF},%
+type={main},%
+first={CMF},%
+firstplural={CMFs},%
+text={CMF},%
+plural={CMFs},%
+description={Complex Matrix Factorization},%
+descriptionplural={Complex Matrix Factorization},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{STFT}%
+{%
+name={STFT},%
+sort={STFT},%
+type={main},%
+first={STFT},%
+firstplural={STFTs},%
+text={STFT},%
+plural={STFTs},%
+description={Short-Time Fourier Transformation},%
+descriptionplural={Short-Time Fourier Transformation},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{DTFT}%
+{%
+name={DTFT},%
+sort={DTFT},%
+type={main},%
+first={DTFT},%
+firstplural={DTFTs},%
+text={DTFT},%
+plural={DTFTs},%
+description={Discrete-Time Fourier Transformation},%
+descriptionplural={Discrete-Time Fourier Transformation},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ISTFT}%
+{%
+name={ISTFT},%
+sort={ISTFT},%
+type={main},%
+first={ISTFT},%
+firstplural={ISTFTs},%
+text={ISTFT},%
+plural={ISTFTs},%
+description={Inverse Short-Time Fourier Transformation},%
+descriptionplural={Inverse Short-Time Fourier Transformation},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{IBM}%
+{%
+name={IBM},%
+sort={IBM},%
+type={main},%
+first={IBM},%
+firstplural={IBMs},%
+text={IBM},%
+plural={IBMs},%
+description={Ideal Binary Mask},%
+descriptionplural={Ideal Binary Mask},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{IRM}%
+{%
+name={IRM},%
+sort={IRM},%
+type={main},%
+first={IRM},%
+firstplural={IRMs},%
+text={IRM},%
+plural={IRMs},%
+description={Ideal Ratio Mask},%
+descriptionplural={Ideal Ratio Mask},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{SNR}%
+{%
+name={SNR},%
+sort={SNR},%
+type={main},%
+first={SNR},%
+firstplural={SNRs},%
+text={SNR},%
+plural={SNRs},%
+description={Signal-to-Noise Ratio},%
+descriptionplural={Signal-to-Noise Ratio},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{DNN}%
+{%
+name={DNN},%
+sort={DNN},%
+type={main},%
+first={DNN},%
+firstplural={DNNs},%
+text={DNN},%
+plural={DNNs},%
+description={Deep neural network},%
+descriptionplural={Deep neural network},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{SVM}%
+{%
+name={SVM},%
+sort={SVM},%
+type={main},%
+first={SVM},%
+firstplural={SVMs},%
+text={SVM},%
+plural={SVMs},%
+description={Support vector machine},%
+descriptionplural={Support vector machine},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{KL-divergence}%
+{%
+name={KL-divergence},%
+sort={KL-divergence},%
+type={main},%
+first={KL-divergence},%
+firstplural={KL-divergences},%
+text={KL-divergence},%
+plural={KL-divergences},%
+description={Kullback-Leibler divergence},%
+descriptionplural={Kullback-Leibler divergence},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{MPE}%
+{%
+name={MPE},%
+sort={MPE},%
+type={main},%
+first={MPE},%
+firstplural={MPEs},%
+text={MPE},%
+plural={MPEs},%
+description={Multipitch Estimator},%
+descriptionplural={Multipitch Estimator},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{PEFAC}%
+{%
+name={PEFAC},%
+sort={PEFAC},%
+type={main},%
+first={PEFAC},%
+firstplural={PEFACs},%
+text={PEFAC},%
+plural={PEFACs},%
+description={Pitch Estimation Filter with Amplitude Compression},%
+descriptionplural={Pitch Estimation Filter with Amplitude Compression},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{GMM}%
+{%
+name={GMM},%
+sort={GMM},%
+type={main},%
+first={GMM},%
+firstplural={GMMs},%
+text={GMM},%
+plural={GMMs},%
+description={Gaussian mixture models},%
+descriptionplural={Gaussian mixture models},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{GLA}%
+{%
+name={GLA},%
+sort={GLA},%
+type={main},%
+first={GLA},%
+firstplural={GLAs},%
+text={GLA},%
+plural={GLAs},%
+description={Griffin and Lim Algorithm},%
+descriptionplural={Griffin and Lim Algorithm},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{MISI}%
+{%
+name={MISI},%
+sort={MISI},%
+type={main},%
+first={MISI},%
+firstplural={MISIs},%
+text={MISI},%
+plural={MISIs},%
+description={Multiple Input Spectrogram Inversion},%
+descriptionplural={Multiple Input Spectrogram Inversion},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{PPR}%
+{%
+name={PPR},%
+sort={PPR},%
+type={main},%
+first={PPR},%
+firstplural={PPRs},%
+text={PPR},%
+plural={PPRs},%
+description={Partial Phase Reconstruction},%
+descriptionplural={Partial Phase Reconstruction},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ISSIR}%
+{%
+name={ISSIR},%
+sort={ISSIR},%
+type={main},%
+first={ISSIR},%
+firstplural={ISSIRs},%
+text={ISSIR},%
+plural={ISSIRs},%
+description={Partial Phase Reconstruction for Informed Source Separation},%
+descriptionplural={Partial Phase Reconstruction for Informed Source Separation},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{FHMM}%
+{%
+name={FHMM},%
+sort={FHMM},%
+type={main},%
+first={FHMM},%
+firstplural={FHMMs},%
+text={FHMM},%
+plural={FHMMs},%
+description={Factorial Hidden Markov Models},%
+descriptionplural={Factorial Hidden Markov Models},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{HMM}%
+{%
+name={HMM},%
+sort={HMM},%
+type={main},%
+first={HMM},%
+firstplural={HMMs},%
+text={HMM},%
+plural={HMMs},%
+description={Hidden Markov Models},%
+descriptionplural={Hidden Markov Models},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{SHR}%
+{%
+name={SHR},%
+sort={SHR},%
+type={main},%
+first={SHR},%
+firstplural={SHRs},%
+text={SHR},%
+plural={SHRs},%
+description={Subharmonic to harmonic ratio},%
+descriptionplural={Subharmonic to harmonic ratio},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{POC}%
+{%
+name={POC},%
+sort={POC},%
+type={main},%
+first={POC},%
+firstplural={POCs},%
+text={POC},%
+plural={POCs},%
+description={Proof of Concept},%
+descriptionplural={Proof of Concept},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{SSR}%
+{%
+name={SSR},%
+sort={SSR},%
+type={main},%
+first={SSR},%
+firstplural={SSRs},%
+text={SSR},%
+plural={SSRs},%
+description={Signal-to-Signal Ratio},%
+descriptionplural={Signal-to-Signal Ratio},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{GPE}%
+{%
+name={GPE},%
+sort={GPE},%
+type={main},%
+first={GPE},%
+firstplural={GPEs},%
+text={GPE},%
+plural={GPEs},%
+description={Gross-Pitch Error},%
+descriptionplural={Gross-Pitch Error},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{MMSE}%
+{%
+name={MMSE},%
+sort={MMSE},%
+type={main},%
+first={MMSE},%
+firstplural={MMSEs},%
+text={MMSE},%
+plural={MMSEs},%
+description={Minimum Mean Squared Error},%
+descriptionplural={Minimum Mean Squared Error},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{PESQ}%
+{%
+name={PESQ},%
+sort={PESQ},%
+type={main},%
+first={PESQ},%
+firstplural={PESQs},%
+text={PESQ},%
+plural={PESQs},%
+description={Perceptual Evaluation of Speech Quality},%
+descriptionplural={Perceptual Evaluation of Speech Quality},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{STOI}%
+{%
+name={STOI},%
+sort={STOI},%
+type={main},%
+first={STOI},%
+firstplural={STOIs},%
+text={STOI},%
+plural={STOIs},%
+description={Short-time objective intelligibility},%
+descriptionplural={Short-time objective intelligibility},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{BSS-Eval}%
+{%
+name={BSS-Eval},%
+sort={BSS-Eval},%
+type={main},%
+first={BSS-Eval},%
+firstplural={BSS-Evals},%
+text={BSS-Eval},%
+plural={BSS-Evals},%
+description={Blind Source separation evaluation},%
+descriptionplural={Blind Source separation evaluation},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{SDR}%
+{%
+name={SDR},%
+sort={SDR},%
+type={main},%
+first={SDR},%
+firstplural={SDRs},%
+text={SDR},%
+plural={SDRs},%
+description={Signal-to-Distortion Ratio},%
+descriptionplural={Signal-to-Distortion Ratio},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{SIR}%
+{%
+name={SIR},%
+sort={SIR},%
+type={main},%
+first={SIR},%
+firstplural={SIRs},%
+text={SIR},%
+plural={SIRs},%
+description={Signal-to-Interference Ratio},%
+descriptionplural={Signal-to-Interference Ratio},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{SAR}%
+{%
+name={SAR},%
+sort={SAR},%
+type={main},%
+first={SAR},%
+firstplural={SARs},%
+text={SAR},%
+plural={SARs},%
+description={Signal-to-Artifact Ratio},%
+descriptionplural={Signal-to-Artifact Ratio},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{PE}%
+{%
+name={PE},%
+sort={PE},%
+type={main},%
+first={PE},%
+firstplural={PEs},%
+text={PE},%
+plural={PEs},%
+description={Phase Estimation},%
+descriptionplural={Phase Estimation},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{SSN}%
+{%
+name={SSN},%
+sort={SSN},%
+type={main},%
+first={SSN},%
+firstplural={SSNs},%
+text={SSN},%
+plural={SSNs},%
+description={Speech-Shaped Noise},%
+descriptionplural={Speech-Shaped Noise},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+

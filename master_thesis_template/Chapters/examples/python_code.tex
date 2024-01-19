@@ -1,0 +1,21 @@
+\newpage
+
+\section{Python Code}\label{ch3:python_code}
+This section is meant to show how to integrate Python code in the document.
+
+\begin{mdframed}
+	\begin{lstlisting}[caption=Python Example, label=lst:python_code_example]
+	from sklearn.linear_model import LinearRegression
+	LinearRegression 
+	# Python code example
+	def calculate_sum(a, b):
+			"""This function calculates the sum of two numbers."""
+			return a + b
+			
+			result = calculate_sum(3, 4)
+			print(f"The sum is: {result}")
+	\end{lstlisting}
+\end{mdframed}
+
+\subsection{Reference to Python Code}\label{subsec:reference_python_code}
+\noindent The Python code of above is referenced here \cref{lst:python_code_example}.

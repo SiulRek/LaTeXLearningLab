@@ -1,0 +1,126 @@
+\ifthenelse{\equal{\coloredTitlePage}{true}}
+{
+	\newcommand{\shadowtitle}{\shadowcolor{black}\shadowoffset{0.5pt}}
+}
+{
+	\newcommand{\shadowtitle}{\shadowoffset{0pt}}
+}
+
+\begin{tikzpicture}[overlay]
+
+\ifthenelse{\equal{\company}{true}}
+{
+	\ifthenelse{\equal{\DegProg}{\ECE}}
+	{
+		\node (Logo) at (9cm,-1) [anchor = east] {\includegraphics[scale = 1]{temp_graphics/company_logo.eps}};
+		\node (Logo2) at (17cm,-0.9) [anchor = east] {\includegraphics[scale = 1.1]{temp_graphics/logo_FHJ_ECE_white.eps}};
+	}{}
+	\ifthenelse{\equal{\DegProg}{\MEC}}
+	{
+		\node (Logo) at (9cm,-1) [anchor = east] {\includegraphics[scale = 1]{temp_graphics/company_logo.eps}};
+		\node (Logo2) at (17.5cm,-1.2) [anchor = east] {\includegraphics[scale = 1.2]{temp_graphics/logo_FHJ_mec_cmyk.eps}};
+	}{}
+	\ifthenelse{\equal{\DegProg}{\ECM}}
+	{
+		\node (Logo) at (8cm,-1) [anchor = east] {\includegraphics[scale = 0.9]{temp_graphics/company_logo.eps}};
+		\node (Logo2) at (16cm,-1.2) [anchor = east] {\includegraphics[scale = 0.9]{temp_graphics/ecm_logo_eps.eps}};
+	}{}
+	\ifthenelse{\equal{\DegProg}{\STM}}
+	{
+		\node (Logo) at (8cm,-1) [anchor = east] {\includegraphics[scale = 0.9]{temp_graphics/company_logo.eps}};
+		\node (Logo2) at (16cm,-1.2) [anchor = east] {\includegraphics[scale = 1.3]{temp_graphics/logo_FHJ_stm_rgb.eps}};
+	}{}
+}
+{
+	\ifthenelse{\equal{\DegProg}{\ECE}}
+	{
+		\node (Logo) at (17cm,-0.9) [anchor = east] {\includegraphics[scale = 1.2]{temp_graphics/logo_FHJ_ECE_white.eps}};
+	}{}
+	\ifthenelse{\equal{\DegProg}{\MEC}}
+	{
+		\node (Logo) at (17.5cm,-1.2) [anchor = east] {\includegraphics[scale = 1.3]{temp_graphics/logo_FHJ_mec_cmyk.eps}};
+	}{}
+	\ifthenelse{\equal{\DegProg}{\ECM}}
+	{
+		\node (Logo) at (16cm,-1.2) [anchor = east] {\includegraphics[scale = 1]{temp_graphics/ecm_logo_eps.eps}};
+	}{}
+	\ifthenelse{\equal{\DegProg}{\STM}}
+	{
+		\node (Logo) at (16cm,-1.2) [anchor = east] {\includegraphics[scale = 1.4]{temp_graphics/logo_FHJ_stm_rgb.eps}};
+	}{}
+}
+
+%% ===== CREATE background ===== %%
+% Background Box
+\ifthenelse{\equal{\coloredTitlePage}{true}}
+{
+	\node (boxOne)  at (7.75 cm,-13) [] {\includegraphics[scale = 0.775]{temp_graphics/titleBacking.eps}};
+}
+{
+	\node (boxOne)  at (6.5cm,-12.5) []{};
+}
+\node (ThesisTitle) [color = \tcol, font = \MainTitlesize, align = flush right, anchor = north east] at (16,-4){\shadowtitle\shadowtext{\ThesisTitle}};%
+
+\node (ThesisSubtitle) [color = \tcol, font = \SubTitlesize, align = flush right, anchor = north east] at ($(ThesisTitle.south east) + (0,-0.25em)$){\shadowtitle\shadowtext{\ThesisSubtitle}};
+
+\node (ThesisType) [color = \tcol, font = \SubTitlesize, align = flush right, anchor = north east] at ($(ThesisSubtitle.south east) + (0,-3em)$){\shadowtitle\shadowtext{\DocTypeText}};
+
+\ifthenelse{\equal{\german}{true}}
+{
+	\node (AuthName) [color = \tcol, font = \large, align = flush right, anchor = north east] at ($(ThesisType.south east) + (0,-2em)$){\shadowtitle\shadowtext{\bf{angefertigt von:}} \\ \shadowtitle\shadowtext{\ThesisAuthor}};
+}
+{
+	\node (AuthName) [color = \tcol, font = \large, align = flush right, anchor = north east] at ($(ThesisType.south east) + (0,-2em)$){\shadowtitle\shadowtext{\bf{written by:}} \\ \shadowtitle\shadowtext{\ThesisAuthor}};
+}
+
+\node (Organization) [color = \tcol, font = \Large, align = flush right, anchor = north east] at ($(AuthName.south east) + (0,-3.5em)$){\shadowtitle\shadowtext{\ThesisLineOne} \\ \shadowtitle\shadowtext{\ThesisLineTwo}};
+
+%\ifthenelse{\equal{\DegProg}{\ECE}}
+%{
+%	\ifthenelse{\equal{\german}{true}}
+%	{
+%		\node (Organization) [color = \tcol, font = \Large, align = flush right, anchor = north east] at ($(AuthName.south east) + (0,-3.5em)$){\shadowtitle\shadowtext{\ThesisLineOne} \\ \shadowtitle\shadowtext{\ThesisLineTwo}};
+%	}
+%	{
+%		\node (Organization) [color = \tcol, font = \Large, align = flush right, anchor = north east] at ($(AuthName.south east) + (0,-3.5em)$){\shadowtitle\shadowtext{at the bachelor's degree programme Elektronik und Computer Engineering} \\ \shadowtitle\shadowtext{of the FH JOANNEUM -- University of Applied Sciences, Austria}};
+%	}
+%}
+%{
+%	\ifthenelse{\equal{\german}{true}}
+%	{
+%		\node (Organization) [color = \tcol, font = \Large, align = flush right, anchor = north east] at ($(AuthName.south east) + (0,-3.5em)$){\shadowtitle\shadowtext{am Master-Studiengang Elektronics and Computer Engineering} \\ \shadowtitle\shadowtext{der FH JOANNEUM -- University of Applied Sciences, Austria}};
+%	}
+%	{
+%		\node (Organization) [color = \tcol, font = \Large, align = flush right, anchor = north east] at ($(AuthName.south east) + (0,-3.5em)$){\shadowtitle\shadowtext{at the master's degree programme Elektronics and Computer Engineering} \\ \shadowtitle\shadowtext{of the FH JOANNEUM -- University of Applied Sciences, Austria}};
+%	}
+%}
+
+\ifthenelse{\equal{\german}{true}}
+{
+	\node (Supervisor) [color = \tcol, font = \large, align = flush right, anchor = north east] at ($(Organization.south east) + (0,-3em)$){\shadowtitle\shadowtext{\bf{unter der Anleitung von:}} \\ \shadowtitle\shadowtext{\Supervisor}};
+}
+{
+	\node (Supervisor) [color = \tcol, font = \large, align = flush right, anchor = north east] at ($(Organization.south east) + (0,-3em)$){\shadowtitle\shadowtext{\bf{supervised by:}} \\ \shadowtitle\shadowtext{\Supervisor}};
+}
+
+\ifthenelse{\equal{\company}{true}}
+{
+	\ifthenelse{\equal{\german}{true}}
+	{
+		\node (COSupervisor) [color = \tcol, font = \large, align = flush right, anchor = north east] at ($(Supervisor.south east) + (0,-3em)$){\shadowtitle\shadowtext{\bf{extern Betreut von:}} \\ \shadowtitle\shadowtext{\CoSupervisor}};
+		
+		\node (ThesisDate) [color = \tcol, font = \large, align = flush right, anchor = north east] at ($(COSupervisor.south east) + (0,-3em)$){\shadowtitle\shadowtext{\bf\ThesisDate}};
+	}
+	{
+		\node (COSupervisor) [color = \tcol, font = \large, align = flush right, anchor = north east] at ($(Supervisor.south east) + (0,-3em)$){\shadowtitle\shadowtext{\bf{externally supervised by:}} \\ \shadowtitle\shadowtext{\CoSupervisor}};
+		
+		\node (ThesisDate) [color = \tcol, font = \large, align = flush right, anchor = north east] at ($(COSupervisor.south east) + (0,-3em)$){\shadowtitle\shadowtext{\bf\ThesisDate}};
+	}
+}
+{
+		\node (ThesisDate) [color = \tcol, font = \large, align = flush right, anchor = north east] at ($(Supervisor.south east) + (0,-3em)$){\shadowtitle\shadowtext{\bf\ThesisDate}};
+}
+
+	\node (SpecialNote) [color = \tcol, font = \large, align = center, anchor = north east] at ($(ThesisDate.south east) + (0,-3em)$){\begin{varwidth}{14cm} \shadowtitle\shadowtext{\SpecialNote} \end{varwidth}};
+
+\end{tikzpicture}	
