@@ -118,7 +118,7 @@
     \begin{itemize}
         \item Employed Recursive Feature Elimination with Cross-Validation (RFECV) for feature selection.
         \item Used \texttt{XGBRFRegressor} as the estimator to assess feature importances.
-        \item Random forest regressor was chosen due to its robustness to outliers and non-linear relationships.
+        \item Linear Regression was choosen to predict the target variable.
         \item \texttt{RFECV} iteratively fits the model and removes the least significant features until the optimal number is achieved.
         \item Cross-validation with 5 folds was applied to ensure robust feature selection.
     \end{itemize}
