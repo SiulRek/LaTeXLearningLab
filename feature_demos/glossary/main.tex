@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{imakeidx}
+
+\makeindex[name=glossary, title=Glossary, columns=1]
+
+\begin{document}
+
+\title{An Example Document with a Glossary}
+\author{Your Name}
+\date{\today}
+\maketitle
+
+\section{Introduction}
+This document includes a simple glossary. We use \LaTeX\index[glossary]{LaTeX!A high-quality typesetting system; it includes features designed for the production of technical and scientific documentation} for typesetting. 
+
+In this document, we will talk about various topics, including LaTeX, bibliography, mathematics, physics, and algorithms.
+
+\section{Main Content}
+\LaTeX\index[glossary]{LaTeX!A high-quality typesetting system} is widely used in academic circles, especially for the creation of documents in mathematics\index[glossary]{Mathematics!The abstract science of number, quantity, and space} and physics\index[glossary]{Physics!The natural science that studies matter, its motion and behavior through space and time, and the related entities of energy and force}. 
+
+An algorithm\index[glossary]{Algorithm!A set of rules to be followed in calculations or other problem-solving operations, especially by a computer} is a fundamental concept in computer science and mathematics.
+
+\section{Conclusion}
+A bibliography\index[glossary]{Bibliography!A section of a document that lists references used throughout the work} is essential for academic writing, especially in fields like physics and mathematics.
+
+% Print the glossary
+\newpage
+\printindex[glossary]
+
+\end{document}
