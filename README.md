@@ -22,8 +22,8 @@ The purpose of this repository is to provide example and template documents that
   - [Master Thesis Template README](master_thesis_template/README.md)
 - **Real Documents Folder**: Contains a collection of real documents I have created.
   - [Real Documents Folder](real_documents/)
-- **LaTeX Resource Folder**: Contains a collection of LaTeX resources I have found useful.
-  - [LaTeX Resources Folder](latex_resources/)
+- **Feature Demos Folder**: This folder contains a collection of documents demonstrating some LaTeX features like glossary, indexing, language_support.
+  - [Feature Demos Folder](feature_demos/)
 
 ## Getting Started with LaTeX
 
