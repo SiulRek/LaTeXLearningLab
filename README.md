@@ -2,6 +2,10 @@
 
 This repository is dedicated to my journey in learning LaTeX. This repository contains a collection of LaTeX projects, each focusing on different aspects and features of LaTeX.
 
+## Purpose
+
+The purpose of this repository is to provide example and template documents that can be used to learn LaTeX. The examples range from basic documents to more structured and styled templates. Each, here mentioned, folder contains a specific LaTeX project (document) with its own README.md with descriptions. Feel free to explore these projects to get started with LaTeX and understand the basic LaTeX capabilities.
+
 ## Repository Contents
 
 - **First Document**: An introductory LaTeX document, showing basic structuring and formatting.
@@ -16,25 +20,15 @@ This repository is dedicated to my journey in learning LaTeX. This repository co
   - [Presentation Template README](presentation_template/README.md)
 - **Master Thesis Template**: A LaTeX template provided by Mayer Florian and slightly changed for simplified usage by me for writing the master's thesis. 
   - [Master Thesis Template README](master_thesis_template/README.md)
-
-## Additional Resources
-
-- [Real Documents Folder](real_documents/): Contains a collection of real documents I have created.
-- [Feature Demos Folder](feature_demos/): Showcases examples of various LaTeX features and how to use them.
-
-## Purpose
-
-The purpose of this repository is to document my learning process in LaTeX, providing examples ranging from basic documents to more structured and styled templates.
-
-## Usage
-
-Each, here mentioned, folder contains a specific LaTeX project with its own README.md with descriptions.
-
-Feel free to explore these projects to get started with LaTeX and understand different LaTeX capabilities.
+- **Real Documents Folder**: Contains a collection of real documents I have created.
+  - [Real Documents Folder](real_documents/)
+- **LaTeX Resource Folder**: Contains a collection of LaTeX resources I have found useful.
+  - [LaTeX Resources Folder](latex_resources/)
 
 ## Getting Started with LaTeX
 
-For those new to LaTeX, the concepts of engines, packages, and overall structure can seem complex. A great starting point is the [LaTeX tutorial on YouTube](https://www.youtube.com/watch?v=CmagZthwhaY), which provides a beginner-friendly introduction to setup LaTeX on Visual Studio Code.
+
+For those new to LaTeX, navigating LaTeX might initially feel a bit complex, especially understanding its engines, packages, and structure. A helpful resource for getting started is the LaTeX tutorial [LaTeX tutorial on YouTube](https://www.youtube.com/watch?v=CmagZthwhaY). This tutorial offers an easy-to-follow guide on setting up Code. Remember, the sequence in which you install components is important – I've faced issues due to installation order myself. Also, debugging in LaTeX can be a bit challenging since error messages aren’t always clear. In such cases, the .log file, GitHub Copilot and ChatGPT, can be quite useful.
 
 ## About LaTeX
 
