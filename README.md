@@ -28,7 +28,7 @@ The purpose of this repository is to provide example and template documents that
 ## Getting Started with LaTeX
 
 
-For those new to LaTeX, navigating LaTeX might initially feel a bit complex, especially understanding its engines, packages, and structure. A helpful resource for getting started is the LaTeX tutorial [LaTeX tutorial on YouTube](https://www.youtube.com/watch?v=CmagZthwhaY). This tutorial offers an easy-to-follow guide on setting up Code. Remember, the sequence in which you install components is important – I've faced issues due to installation order myself. Also, debugging in LaTeX can be a bit challenging since error messages aren’t always clear. In such cases, the .log file, GitHub Copilot and ChatGPT, can be quite useful.
+For those new to LaTeX, navigating LaTeX might initially feel a bit complex, especially understanding its engines, packages, and structure. A helpful resource for getting started is the [LaTeX Workshop for mac](https://www.youtube.com/watch?v=CmagZthwhaY) or the [LaTeX Workshop for windows](https://www.youtube.com/watch?v=4lyHIQl4VM8&t=227s) of Federi Tartarini. This tutorial offers an easy-to-follow guide on setting up the LaTeX environment. Remember, the sequence in which you install components is important – I've faced issues due to installation order myself. Also, debugging in LaTeX can be a bit challenging since error messages aren’t always clear. In such cases, the .log file, GitHub Copilot and ChatGPT, can be quite useful.
 
 ## About LaTeX
 
