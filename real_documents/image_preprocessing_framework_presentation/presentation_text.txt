@@ -5,7 +5,7 @@ Slide 1
 Today, I'm going to share with you the project I completed during my third semester (in the System Test Engineering Master's program), under the supervision of Ms. Schappacher. This project is part of a larger objective to create a tool for detecting defects in PCBs. The primary intention of the project I'm presenting was to develop an image preprocessing framework with python, designed to efficiently and flexibly process PCB images.
 
 Slide 2
-I will start with an 'Introduction to PCB Defect Detection', to understand the motivation behind this project.
+I will start wi+th an 'Introduction to PCB Defect Detection', to understand the motivation behind this project.
 Next, I will define the 'Framework Requirements' that address the specific challenges in PCB image analysis.
 Following that, I will provide an 'Overview of the Framework Implementation', detailing the software architecture.
 I will then delve into the 'Key Features of the Framework'.
@@ -17,7 +17,7 @@ Slide 4
 As we know, PCBs are crucial components of all electronic devices. Having defects can have significant impact on device performance and reliability. Therefore, it is beneficial to detect defects in PCBs by visual inspection of PCB images early in the production.  However, this is a challenging task, because traditional methods like Automatic Optical Inspection systems can be inefficient and time-consuming. So, it is desirable to find more efficient ways for this procedure. This is where the PCB defect detection tool and Machine Learning comes in.
 
 Slide 5
-In this project, we've established a clear workflow with three main stages:
+For PCB defect detection, we've established a clear workflow with three main stages:
 First, we define the specific defects that need to be detected by the machine learning model.
 The second stage is image preprocessing. Here, we prepare the images for the Machine Learning model. The main topic of this presentation.
 
@@ -26,15 +26,15 @@ The third and final stage involves developing and optimizing the Machine Learnin
 This workflow is expected to be of iterative nature. This allows for continuous improvements by adding new data and by updating the model to meet new detection requirements.
 
 Slide 6 
-Now, I want to turn our attention to the importance of image preprocessing within this workflow. It's essential to understand that for machine learning models to correctly identify PCB defects, robust and effective image preprocessing is a crucial step. This step includes transforming raw images into a consistent format and highlighting important features for the model to analyze. Good preprocessing improves the quality of the data, which is vital for the effectiveness of the model.
+Now, I want to turn our attention to the importance of image preprocessing within this workflow. Robust and efficient image preprocessing is required in Machine Learning To allow a model to correctly recognize patterns in images.This process includes transforming raw images into a consistent format and highlighting important features for the model to analyze. Good preprocessing improves the quality of the data, which is vital for the effectiveness of the model. Additionally it also reduce the computational cost of the model.
 
-Now let's look at the specific requirements and their context for the image preprocessing framework.
+Now let's look at the specific requirements of the image preprocessing framework and their background.
 
 Slide 8
 In this code snipped here we can see the main idea behind my first attempts for image preprocessing. In line nine we can see how I applied global_histogram_equalization to an image dataset using the tensorflow's map method. This method applies the global_histogram_equalization to each image in the dataset. I used a similar approach for various other preprocessing operations. In doint that I realized that this approach was error prone and not particularly efficient for constructing a preprocessing pipeline. For example, when attempting to apply multiple preprocessing methods in a sequence, it requires great attention to correctly use the map function, to target the appropriate dataset, and to pass the accurate function as an argument. Additionally, adjusting the parameters for each step, in case it has, can become tedious. This is why I decided to focus on developing a more flexible and efficient framework.
 
 Slide 9
-To be more specific on the framework goals I defined the main requirements:
+To be more specific on the framework goals I defined the main requirements the framework should provide:
 The framework should provide 'Sequence Flexibility'—in other words, it should be easy to modify the order of steps within the preprocessing pipeline.
 Than, It must facilited 'Parameter Experimentation' - to make it simple to experiment different settings.
 Also 'Reproducibility' was crucial - to ensure that the steps can be consistently repeated across different datasets or under varying experimental conditions.
@@ -77,7 +77,28 @@ Slide 17
 In this code snippet we can see how the serialization and deserialization features are used. In line 2 we can see how the pipeline is saved to a JSON file using the method save_pipe_to_json. In line 5 we can see how the pipeline is loaded from a JSON file using the method load_pipe_from_json. Similarly line 8 shows how a randomized pipeline can be loaded from a JSON file. 
 
 Slide 18
-On this slide we can see an example of a JSON entry used for pipeline configuration. The pipeline is defined as a list of dictionaries. Each dictionary represents a preprocessing step. The dictionary contains the name of the step and the parameters for the step. The pipeline that is defined here corresponds to the pipeline I showed you previously in the first python code snippet.
+On this slide we can see an example of a JSON entry used for pipeline configuration. Each key of the JSON file corresponds to a preprocessing step. The value of each key correspond to the pararemters fo the preprocessing step. The pipeline that is defined here corresponds to the pipeline we haved defined previously in form of a python list.
 
 Slide 19
 And here we can see an example of the JSON entry for randomized pipeline configuration. Similar like before, the pipeline is defined as a list of dictionaries. In contrast to the previous example, the parameters for each step does not have a specific value, but instead a range of values. The values are defined as a distribution of values like "clip_limit" or a list of values like "tile_gridsize" or "desired_shape". The framework samples then randomly a value from the distribution or list. This allows for easy experimentation with different parameter values. Now let's move on to the live demonstation.
+
+Let's move on to the last chapter of the presentation "Conclusion and Next Steps".
+
+Slide 21
+Regarding opportunities for improvements two potential areas stand out:
+Firstly, automating the selection of preprocessing steps would enable the framework to not just randomize parameters but also the sequence of preprocessing steps applied.
+
+Secondly, there is room to improve processing efficiency by optimizing the use of the TensorFlow API.
+
+Additionally, due to the framework's modular design, it can be also integrating in other projects as well. In discussions with Ms. Schappacher, we are considering releasing the image preprocessing framework as an open-source project.
+
+Concerning the PCB Detection Project, the next step will be to develop the PCB Defect Detector model, incorporating the image preprocessing framework that has been developed.
+
+Slide 22
+I'd like to now briefly recap the main features of our framework.
+- Streamlines image preprocessing tasks
+- Efficient management of preprocessing configurations
+- Enables preprocessing randomization
+- Designed to be modular and robust
+- Applicable in various machine learning scenarios
+
