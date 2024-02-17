@@ -1,5 +1,5 @@
 LaTeXLearningLab.code-workspace
-TODO.txt
+**/local/
 # LaTex related
 # General
 *.log
@@ -63,4 +63,3 @@ Thumbs.db
 **/temp.*
 
 IEE_Template_v2/*
-**/notes.txt
