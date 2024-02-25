@@ -1,0 +1,73 @@
+% Preamble
+
+
+% Run LaTeX compiler multiple times
+% First run
+\documentclass[12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\usepackage{chapterbib}
+\usepackage{lmodern}
+\usepackage[top=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage[numbers]{natbib}
+\usepackage{styles/mystyle}
+
+\begin{document}
+
+\input{titlepage/titlepage.tex}
+
+\chapter{Introduction}
+This literature review explores Advanced Driver-Assistance Systems (ADAS) and Autonomous Driving (AD), focusing on the vital role of control algorithms in these technologies.
+
+\chapter{Review of Literature}
+
+\section{McKinsey \& Company - ADAS Growth \& Opportunities}
+The McKinsey report discusses expected growth in the ADAS hardware sector, emphasizing the role of processors and optical semiconductors. It highlights the significance of algorithms and software in enhancing sensor performance under various environmental conditions \citep{mckinsey2024}.
+
+\section{ADAS Sensor Technologies}
+This publication provides an in-depth look at sensor technologies like Lidar, Radar, and Ultrasonic sensors in ADAS. It presents their applications, advantages, and limitations, offering a comprehensive view of the sensor landscape in ADAS/AD systems \citep{sensorTech2024}.
+
+\section{Tata Elxsi - AD/ADAS Technologies Guide}
+Tata Elxsi's guide offers an extensive overview of AD and ADAS technologies, covering sensors such as cameras, radar, and LiDAR, as well as software algorithms and communication technologies like V2V and V2I. It also discusses emerging trends in automation \citep{tataElxsi2024}.
+
+\section{Speedgoat on ADAS Design \& Testing}
+This resource from Speedgoat provides insights into the design and testing of ADAS perception systems. It discusses the utilization of tools like Simulink in the development and testing of ADAS algorithms \citep{speedgoat2024}.
+
+\section{MathWorks - ADAS with MATLAB \& Simulink}
+MathWorks describes the application of MATLAB in various stages of ADAS development. It focuses on the analysis of driving data and the development of planning, control, and perception algorithms \citep{mathworks2024}.
+
+\section{NI - Basics of ADAS}
+This article from National Instruments explains the fundamental concepts of ADAS, differentiating between active and passive systems. It also clarifies the distinctions between ADAS and fully autonomous driving \citep{niADAS2024}.
+
+\section{Recent Trends in ADAS Algorithms}
+A 2024 study reviews the latest developments in object detection, recognition, and tracking algorithms for ADAS. It discusses the evolution and future challenges of these algorithms \citep{adasTrends2024}.
+
+\section{Simulation-Based ADAS Testing}
+This 2017 paper advocates for a simulation-based approach using Software-in-the-Loop environments for testing and validating ADAS systems. It highlights the complexity of these systems and the need for comprehensive testing methods \citep{simulationTest2024}.
+
+\section{Virtual Testing for ADAS Safety}
+The 2021 paper emphasizes the importance of virtual testing for the safety of ADAS algorithms. It presents virtual testing as a safer and more cost-effective alternative to real-world testing \citep{virtualTesting2024}.
+
+\section{FEV-Driver for ADAS and AD Development}
+The 2018 paper introduces FEV-Driver, a cost-effective platform for developing and testing ADAS and AD functions using an electric go-kart. It describes the platform's application in developing systems like Lane Keep Assist and Automatic Emergency Braking \citep{fevDriver2024}.
+
+\section{Rapid AEB Verification}
+This 2022 paper details a new system for rapidly verifying Automatic Emergency Braking algorithms in passenger cars, focusing on collision prevention and vehicle control \citep{aebVerification2024}.
+
+\chapter{Conclusion}
+The literature reviewed highlights the dynamic progression in ADAS/AD technologies, particularly in control algorithms. It underscores ongoing advancements in sensors, software, and testing methodologies in this field.
+
+% Bibliography
+\newpage
+\bibliography{bibliography/references} % Specify the bibliography file
+
+% End of the document
+\end{document}
+
