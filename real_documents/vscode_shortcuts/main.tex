@@ -53,6 +53,7 @@ Step Into & F11 & editor.debug.action.stepInto \\
 Step Out & Shift + F11 & editor.debug.action.stepOut \\
 Step Over & F10 & editor.debug.action.stepOver \\
 Stop & Shift + F5 & workbench.action.debug.stop \\
+Toggle Breakpoint & F9 & editor.debug.action.toggleBreakpoint \\
 \hline
 \end{longtable}
 
@@ -113,14 +114,17 @@ Show/hide the terminal & Alt + Ä & workbench.action.terminal.toggleTerminal \\
 Create new terminal & Alt + Shift + Ä & workbench.action.terminal.newTerminal \\
 Show/hide the sidebar & Ctrl + B & workbench.action.toggleSidebarVisibility \\
 Go to the view & Shift + Ctrl + E or Ctrl + E & workbench.view.explorer \\
-Search for text in files & Shift + Ctrl + F & workbench.action.findInFiles \\
+Search for text in files & Shift + Ctrl +f F & workbench.action.findInFiles \\
 Open source control & Ctrl + Shift + G & workbench.view.scm \\
 Show extensions & Ctrl + Shift + X & workbench.view.extensions \\
+New File when explorer view focused & Alt + F & explorer.newFile \\
+New Directory when explorer view focused & Alt + D & explorer.newDirectory \\
 Enter Zen mode & Ctrl + K, Z & workbench.action.toggleZenMode \\
 Exit Zen mode & Ctrl + K, Z & workbench.action.toggleZenMode \\
 Quickly open a file & Ctrl + P & workbench.action.quickOpen \\
 Save all files & Ctrl + K, S & workbench.action.files.saveAll \\
 Close all files & Ctrl + K, Ctrl + W & workbench.action.closeAllEditors \\
+Close all other tabs & Ctrl + Shift + F4 & workbench.action.closeOtherEditors \\
 Move to the top/bottom of the file & Ctrl + Home/End & cursorTop or cursorBottom \\
 Find text in the file & Ctrl + F & actions.find \\
 Open the "Peak Editor" for a variable & Shift + F12 & editor.action.referenceSearch.trigger \\
