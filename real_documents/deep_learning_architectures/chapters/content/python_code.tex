@@ -1,0 +1,16 @@
+\section{Python Code}
+\label{sec:python_code}
+
+This section includes an example of how to include a Python code snippet in your LaTeX document.
+
+\begin{lstlisting}[caption=Python Example, label=lst:python_code]
+from sklearn.linear_model import (*@\class{LinearRegression}@*)
+   LinearRegression 
+    # Python code example
+    def calculate_sum(a, b):
+        """This function calculates the sum of two numbers."""
+        return a + b
+    
+    result = calculate_sum(3, 4)
+    print(f"The sum is: {result}")
+\end{lstlisting}

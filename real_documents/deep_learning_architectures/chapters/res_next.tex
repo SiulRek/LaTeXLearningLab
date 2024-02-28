@@ -1,0 +1,64 @@
+\chapter{ResNeXt}
+
+\section{Description}
+ResNeXt is an extension of the ResNet architecture that introduces the concept of aggregated transformations. It maintains the benefits of ResNet's residual connections while increasing the network's cardinality – the size of the set of transformations. This approach allows ResNeXt to achieve higher accuracy without a significant increase in complexity.
+
+\section{Python Implementation}
+\begin{lstlisting}[language=Python]
+from tensorflow.keras import layers, models
+
+def grouped_convolution_block(input, num_filters, cardinality, strides):
+    group_list = []
+    for j in range(cardinality):
+        x = layers.Conv2D(num_filters // cardinality, kernel_size=3, padding='same', strides=strides, groups=cardinality)(input)
+        group_list.append(x)
+    x = layers.concatenate(group_list)
+    return x
+
+def resnext_block(input, num_filters, cardinality, strides=1):
+    shortcut = layers.Conv2D(num_filters, kernel_size=1, strides=strides)(input)
+    shortcut = layers.BatchNormalization()(shortcut)
+
+    x = layers.Conv2D(num_filters, kernel_size=1, padding='same')(input)
+    x = layers.BatchNormalization()(x)
+    x = layers.Activation('relu')(x)
+
+    x = grouped_convolution_block(x, num_filters, cardinality, strides)
+
+    x = layers.Conv2D(num_filters, kernel_size=1, padding='same')(x)
+    x = layers.BatchNormalization()(x)
+    x = layers.add([shortcut, x])
+    x = layers.Activation('relu')(x)
+    return x
+
+input = layers.Input(shape=(224, 224, 3))
+x = layers.Conv2D(128, kernel_size=7, strides=2, padding='same')(input)
+x = layers.MaxPooling2D(pool_size=3, strides=2, padding='same')(x)
+
+for num_filters in [256, 512, 1024, 2048]:
+    x = resnext_block(x, num_filters, cardinality=32)
+
+x = layers.GlobalAveragePooling2D()(x)
+output = layers.Dense(10, activation='softmax')(x)
+
+model = models.Model(inputs=input, outputs=output)
+\end{lstlisting}
+
+\section{Advantages and Disadvantages}
+\begin{itemize}
+    \item \textbf{Advantages:}
+    \begin{enumerate}
+        \item Enhanced feature representation due to increased cardinality.
+        \item Improved accuracy on image recognition tasks without excessive increase in model complexity.
+        \item Residual connections help in training deeper networks effectively.
+    \end{enumerate}
+    \item \textbf{Disadvantages:}
+    \begin{enumerate}
+        \item Higher computational requirements compared to simpler architectures.
+        \item Increased model complexity can lead to longer training times.
+        \item Potential overfitting on smaller datasets without adequate regularization.
+    \end{enumerate}
+\end{itemize}
+
+\section{Comments}
+ResNeXt is a powerful architecture that combines the strengths of increased cardinality with residual learning. Its ability to efficiently process a larger set of transformations makes it a strong candidate for complex image recognition tasks. However, its enhanced capabilities come with the trade-off of increased computational demands, making it suitable for scenarios where resources are not a major constraint.

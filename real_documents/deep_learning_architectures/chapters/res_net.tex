@@ -1,0 +1,60 @@
+\chapter{ResNet}
+
+\section{Description}
+ResNet, short for Residual Networks, is a type of convolutional neural network (CNN) architecture that introduced the concept of skip connections. These connections allow gradients to flow through the network more effectively, enabling the training of much deeper networks by addressing the vanishing gradient problem.
+
+\section{Python Implementation}
+\begin{lstlisting}[language=Python]
+from tensorflow.keras import layers, models
+
+def resnet_block(input, num_filters, kernel_size=3, strides=1, use_conv_shortcut=False):
+    x = layers.BatchNormalization()(input)
+    x = layers.Activation('relu')(x)
+    if use_conv_shortcut:
+        shortcut = layers.Conv2D(num_filters, kernel_size=1, strides=strides)(input)
+    else:
+        shortcut = input
+
+    x = layers.Conv2D(num_filters, kernel_size, padding='same', strides=strides)(x)
+    x = layers.BatchNormalization()(x)
+    x = layers.Activation('relu')(x)
+    x = layers.Conv2D(num_filters, kernel_size, padding='same')(x)
+
+    x = layers.add([x, shortcut])
+    return x
+
+input = layers.Input(shape=(224, 224, 3))
+x = layers.Conv2D(64, kernel_size=7, strides=2, padding='same')(input)
+x = layers.MaxPooling2D(pool_size=3, strides=2, padding='same')(x)
+
+for num_filters in [64, 128, 256, 512]:
+    for _ in range(3):
+        if num_filters > 64:
+            x = resnet_block(x, num_filters, strides=2, use_conv_shortcut=True)
+        else:
+            x = resnet_block(x, num_filters)
+
+x = layers.GlobalAveragePooling2D()(x)
+output = layers.Dense(10, activation='softmax')(x)
+
+model = models.Model(inputs=input, outputs=output)
+\end{lstlisting}
+
+\section{Advantages and Disadvantages}
+\begin{itemize}
+    \item \textbf{Advantages:}
+    \begin{enumerate}
+        \item Enables training of very deep networks by mitigating the vanishing gradient problem.
+        \item Improves the learning of complex patterns by deepening the architecture.
+        \item Increased performance and accuracy in various image recognition tasks.
+    \end{enumerate}
+    \item \textbf{Disadvantages:}
+    \begin{enumerate}
+        \item High computational resources required for training deeper models.
+        \item Complexity increases with depth, which may lead to increased training time.
+        \item Potential overfitting on smaller datasets without proper regularization.
+    \end{enumerate}
+\end{itemize}
+
+\section{Comments}
+ResNet represents a major breakthrough in the development of deep neural networks. Its ability to efficiently train deeper models has led to significant improvements in various tasks, particularly in image recognition. While the deeper models demand considerable computational power, the gains in performance make ResNet a popular choice in advanced machine learning applications.

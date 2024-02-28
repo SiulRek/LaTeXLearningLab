@@ -1,0 +1,56 @@
+\chapter{GoogLeNet (Inception v1)}
+
+\section{Description}
+GoogLeNet, also known as Inception v1, is a deep convolutional neural network architecture that achieved significant improvements in efficiency and computational cost. It's known for its 'Inception' modules, which use parallel convolutions of different sizes to extract information efficiently.
+
+\section{Python Implementation}
+\begin{lstlisting}[language=Python]
+from tensorflow.keras import layers, models
+
+def inception_module(filters):
+    branch1 = layers.Conv2D(filters[0], kernel_size=1, activation='relu')
+
+    branch2 = models.Sequential([
+        layers.Conv2D(filters[1], kernel_size=1, activation='relu'),
+        layers.Conv2D(filters[2], kernel_size=3, padding='same', activation='relu')
+    ])
+
+    branch3 = models.Sequential([
+        layers.Conv2D(filters[3], kernel_size=1, activation='relu'),
+        layers.Conv2D(filters[4], kernel_size=5, padding='same', activation='relu')
+    ])
+
+    branch4 = models.Sequential([
+        layers.MaxPooling2D(pool_size=3, strides=1, padding='same'),
+        layers.Conv2D(filters[5], kernel_size=1, activation='relu')
+    ])
+
+    return layers.Concatenate()([branch1, branch2, branch3, branch4])
+
+model = models.Sequential([
+    layers.Conv2D(64, kernel_size=7, strides=2, padding='same', activation='relu'),
+    layers.MaxPooling2D(pool_size=3, strides=2),
+    # Additional layers and Inception modules here
+    inception_module([64, 96, 128, 16, 32, 32]),
+    # More layers and Inception modules
+    layers.GlobalAveragePooling2D(),
+    layers.Dense(1000, activation='softmax')
+])
+\end{lstlisting}
+
+\section{Advantages and Disadvantages}
+\begin{itemize}
+    \item \textbf{Advantages:}
+    \begin{enumerate}
+        \item Efficient computation and use of parameters through Inception modules.
+        \item Excellent performance in image recognition tasks with a reduced chance of overfitting.
+    \end{enumerate}
+    \item \textbf{Disadvantages:}
+    \begin{enumerate}
+        \item Complex architecture makes it more challenging to understand and modify.
+        \item Slightly increased computational cost compared to simpler models.
+    \end{enumerate}
+\end{itemize}
+
+\section{Comments}
+GoogLeNet's inception architecture marked a significant development in the field of deep learning, showcasing the effectiveness of parallel convolutions and depth in neural networks. Its design has influenced numerous subsequent models and remains a foundational architecture in computer vision.

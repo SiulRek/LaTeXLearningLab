@@ -1,0 +1,71 @@
+\chapter{Capsule Network (CapsuleNet)}
+
+\section{Description}
+Capsule Networks (CapsuleNets) introduce the concept of capsules, which are groups of neurons representing various properties of the same entity. Unlike traditional neural networks that rely on scalar output neurons, capsules output vectors to capture both the probability of an entity's presence and its instantiation parameters. This allows for better preservation of spatial hierarchies between features, making CapsuleNets particularly effective for tasks where spatial relationships are key.
+
+\section{Python Implementation}
+\begin{lstlisting}[language=Python]
+from tensorflow.keras import layers, models
+import tensorflow as tf
+
+def squash(vectors, axis=-1):
+    s_squared_norm = tf.reduce_sum(tf.square(vectors), axis, keepdims=True)
+    scale = s_squared_norm / (1 + s_squared_norm) / tf.sqrt(s_squared_norm + tf.keras.backend.epsilon())
+    return scale * vectors
+
+class CapsuleLayer(layers.Layer):
+    def __init__(self, num_capsule, dim_capsule, **kwargs):
+        super(CapsuleLayer, self).__init__(**kwargs)
+        self.num_capsule = num_capsule
+        self.dim_capsule = dim_capsule
+
+    def build(self, input_shape):
+        self.kernel = self.add_weight(name='capsule_kernel',
+                                      shape=(input_shape[-1], self.num_capsule * self.dim_capsule),
+                                      initializer='glorot_uniform',
+                                      trainable=True)
+
+    def call(self, inputs):
+        inputs_expand = tf.keras.backend.expand_dims(inputs, -1)
+        inputs_tiled = tf.keras.backend.tile(inputs_expand, [1, 1, self.num_capsule * self.dim_capsule])
+        inputs_hat = tf.keras.backend.map_fn(lambda x: tf.keras.backend.dot(x, self.kernel), elems=inputs_tiled)
+        inputs_hat_reshaped = tf.keras.backend.reshape(inputs_hat, (-1, inputs.shape[1], self.num_capsule, self.dim_capsule))
+        b_ij = tf.zeros(shape=[tf.shape(inputs)[0], inputs.shape[1], self.num_capsule, 1])
+
+        for i in range(3):  # Routing algorithm iterations
+            c_ij = tf.nn.softmax(b_ij, axis=2)
+            s_ij = tf.keras.backend.batch_dot(c_ij, inputs_hat_reshaped, [2, 2])
+            v_ij = squash(s_ij)
+            if i < 2:
+                b_ij += tf.keras.backend.batch_dot(v_ij, inputs_hat_reshaped, [2, 3])
+
+        return v_ij
+
+input = layers.Input(shape=(28, 28, 1))
+x = layers.Conv2D(64, 3, activation='relu')(input)
+x = layers.Conv2D(64, 3, activation='relu')(x)
+x = layers.Reshape([-1, 64])(x)
+capsule = CapsuleLayer(num_capsule=10, dim_capsule=16)(x)
+output = layers.Lambda(lambda z: tf.sqrt(tf.reduce_sum(tf.square(z), 2)))(capsule)
+
+model = models.Model(inputs=input, outputs=output)
+\end{lstlisting}
+
+\section{Advantages and Disadvantages}
+\begin{itemize}
+    \item \textbf{Advantages:}
+    \begin{enumerate}
+        \item Better representation of spatial relationships and hierarchies.
+        \item Improved performance on tasks like image classification, especially with complex spatial structures.
+        \item Robustness to affine transformations and viewpoint changes.
+    \end{enumerate}
+    \item \textbf{Disadvantages:}
+    \begin{enumerate}
+        \item Increased computational complexity due to dynamic routing and vector outputs.
+        \item Potentially harder to train and optimize compared to traditional CNNs.
+        \item Limited scalability to very large datasets or very deep architectures.
+    \end{enumerate}
+\end{itemize}
+
+\section{Comments}
+Capsule Networks represent a paradigm shift in neural network architecture, offering a unique approach to understanding spatial relationships in data. While they present challenges in terms of computational requirements and scalability, their ability to capture intricate patterns and transformations holds great promise for advancing the field of deep learning.

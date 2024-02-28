@@ -1,0 +1,64 @@
+% Preamble
+\documentclass[12pt]{report} % Defines the report document class with 12pt font size.
+\usepackage[utf8]{inputenc} % Allows the use of UTF-8 characters in the document.
+\usepackage[T1]{fontenc} % Enhances font encoding for European and extended character sets.
+\usepackage{graphicx} % Enables the inclusion and manipulation of graphics.
+\usepackage{listings} % Provides source code listings.
+\usepackage{amsmath} % Provides support for mathematical equations.
+\usepackage{float} % Provides additional options for figure placement such as H.
+\usepackage{hyperref} % Adds hyperlink capabilities to the document.
+\usepackage[nameinlink,noabbrev]{cleveref} % Provides support for clever references.
+\usepackage{chapterbib} % Provides support for multiple bibliographies in the document.
+\usepackage{lmodern} % Provides the Latin Modern font family.
+\usepackage[top=1in]{geometry} % Adjust the top margin
+\usepackage{fancyhdr} % Provides support for custom headers and footers.
+\usepackage[numbers]{natbib} %  Provides support for author-year citations. 
+\usepackage{pdflscape}
+%\usepackage{sloppy}
+% Usse CTAN to download the package and install it in your LaTeX distribution.
+
+
+% Custom styling
+\usepackage{styles/mystyle} % Loads defined custom styles.
+
+% Document begins here
+\begin{document}
+
+\input{titlepage/titlepage.tex}
+
+% Table of Contents
+\tableofcontents[1]
+\newpage
+
+% Include chapters
+\input{chapters/introduction.tex}
+\input{chapters/comparison.tex}
+\input{chapters/alex_net.tex}
+\input{chapters/network_in_network.tex}
+\input{chapters/denconv_net.tex}
+\input{chapters/google_net.tex}
+\input{chapters/highway_network.tex}
+\input{chapters/res_net.tex}
+\input{chapters/inception.tex}
+\input{chapters/dense_net.tex}
+\input{chapters/vgg.tex}
+\input{chapters/res_next.tex}
+\input{chapters/wide_res_net.tex}
+\input{chapters/pyramidal_net.tex}
+\input{chapters/xception.tex}
+\input{chapters/res_attention_net.tex}
+\input{chapters/concurrent_excitation_mechanism.tex} 
+\input{chapters/high_resolution_net.tex}
+\input{chapters/capsule_net.tex}
+\newpage
+
+
+% Bibliography
+% \newpage
+% \bibliography{bibliography/references}
+
+% Appendices
+
+% End of the document
+\end{document}
+

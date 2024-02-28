@@ -1,0 +1,66 @@
+\chapter{Pyramidal Neural Network (Pyramidal Net)}
+
+\section{Description}
+Pyramidal Neural Networks represent an innovative approach in neural network architecture, where each layer in the network gradually increases in depth (number of channels), resembling a pyramid. This gradual increment allows for more sophisticated feature extraction and learning capabilities.
+
+\section{Python Implementation}
+\begin{lstlisting}[language=Python]
+from tensorflow.keras import layers, models
+
+def transition_block(input_channels, output_channels):
+    block = models.Sequential()
+    block.add(layers.BatchNormalization())
+    block.add(layers.ReLU())
+    block.add(layers.Conv2D(output_channels, kernel_size=1))
+    block.add(layers.AveragePooling2D(pool_size=2, strides=2))
+    return block
+
+def pyramidal_block(input_channels, growth_rate, num_layers):
+    block = models.Sequential()
+    for i in range(num_layers):
+        block.add(layers.BatchNormalization())
+        block.add(layers.ReLU())
+        block.add(layers.Conv2D(growth_rate, kernel_size=3, padding='same'))
+        input_channels += growth_rate
+    return block, input_channels
+
+def pyramidal_net(growth_rate=12, num_blocks=[6, 12, 24, 16]):
+    num_channels = 64  # Initial number of channels
+    model = models.Sequential()
+    model.add(layers.Conv2D(num_channels, kernel_size=7, strides=2, padding='same'))
+
+    for idx, num_layers in enumerate(num_blocks):
+        block, num_channels = pyramidal_block(num_channels, growth_rate, num_layers)
+        model.add(block)
+        if idx != len(num_blocks) - 1:
+            model.add(transition_block(num_channels, num_channels // 2))
+            num_channels = num_channels // 2
+
+    model.add(layers.BatchNormalization())
+    model.add(layers.ReLU())
+    model.add(layers.GlobalAveragePooling2D())
+    model.add(layers.Dense(10, activation='softmax'))
+
+    return model
+
+model = pyramidal_net()
+\end{lstlisting}
+
+\section{Advantages and Disadvantages}
+\begin{itemize}
+    \item \textbf{Advantages:}
+    \begin{enumerate}
+        \item Enhanced feature learning through gradual depth increase.
+        \item Improved information flow and regularization due to unique structure.
+        \item More efficient use of model parameters compared to traditional deep networks.
+    \end{enumerate}
+    \item \textbf{Disadvantages:}
+    \begin{enumerate}
+        \item Increased computational complexity due to the growing number of channels.
+        \item Potentially longer training times compared to more traditional architectures.
+        \item Optimization may be more challenging due to the unique structure.
+    \end{enumerate}
+\end{itemize}
+
+\section{Comments}
+Pyramidal Nets offer a distinctive approach to deep learning architecture by increasing the depth progressively across the network. This gradual increment in complexity allows the network to learn more sophisticated features at deeper levels while maintaining a more efficient use of parameters. Despite the increased computational demands, Pyramidal Nets have shown promise in improving the performance of deep learning models, especially in tasks requiring detailed feature extraction and representation.

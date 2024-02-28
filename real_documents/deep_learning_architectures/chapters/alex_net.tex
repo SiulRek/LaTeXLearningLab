@@ -1,0 +1,42 @@
+\chapter{AlexNet}
+
+\section{Description}
+AlexNet, a pioneering architecture in deep learning, marked a significant breakthrough in the field of computer vision. Introduced by Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton in 2012, it won the ImageNet Large Scale Visual Recognition Challenge by a substantial margin. This architecture consists of five convolutional layers, some of which are followed by max-pooling layers, and three fully connected layers, with the final layer being a softmax classifier. A key feature of AlexNet is the use of ReLU (Rectified Linear Units) for the nonlinearities, which was a novel approach at the time. Additionally, it employed dropout and data augmentation to combat overfitting, and used GPU computing for faster training.
+
+\section{Python Implementation}
+\begin{lstlisting}[language=Python]
+model = models.Sequential([
+    layers.Conv2D(96, kernel_size=(11, 11), strides=(4, 4), activation='relu', input_shape=(227,227,3)),
+    layers.BatchNormalization(),
+    layers.MaxPooling2D(pool_size=(3, 3), strides=(2, 2)),
+    layers.Conv2D(256, kernel_size=(5, 5), activation='relu', padding="same"),
+    layers.BatchNormalization(),
+    layers.MaxPooling2D(pool_size=(3, 3), strides=(2, 2)),
+    layers.Conv2D(384, kernel_size=(3, 3), activation='relu', padding="same"),
+    layers.Conv2D(384, kernel_size=(3, 3), activation='relu', padding="same"),
+    layers.Conv2D(256, kernel_size=(3, 3), activation='relu', padding="same"),
+    layers.MaxPooling2D(pool_size=(3, 3), strides=(2, 2)),
+    layers.Flatten(),
+    layers.Dense(4096, activation='relu'),
+    layers.Dropout(0.5),
+    layers.Dense(4096, activation='relu'),
+    layers.Dropout(0.5),
+    layers.Dense(1000, activation='softmax')
+])
+\end{lstlisting}
+
+\section{Advantages}
+\begin{enumerate}
+    \item \textbf{Performance:} AlexNet significantly outperformed other models in the ImageNet competition, proving its effectiveness in image recognition tasks.
+    \item \textbf{Innovative Techniques:} The use of ReLU, dropout, and data augmentation were groundbreaking at the time and have since become standard in deep learning.
+\end{enumerate}
+
+\section{Disadvantages}
+\begin{enumerate}
+    \item \textbf{Size and Complexity:} AlexNet is relatively large and computationally intensive, requiring significant resources for training and inference.
+    \item \textbf{Overfitting:} Despite techniques to reduce it, AlexNet can overfit on smaller datasets.
+\end{enumerate}
+
+
+\section{Comments}
+AlexNet is often considered a milestone in the development of deep learning, particularly in the field of computer vision. It opened the door for the use of deep neural networks in real-world applications and set the stage for subsequent innovations in the field.
