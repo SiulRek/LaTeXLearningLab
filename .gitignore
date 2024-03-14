@@ -57,6 +57,8 @@ Thumbs.db
 /_minted-*
 *.bbl
 *.run.xml
+*.lol
+*.glsdefs
 # Output
 *.pdf
 # Ignore all files called temp
