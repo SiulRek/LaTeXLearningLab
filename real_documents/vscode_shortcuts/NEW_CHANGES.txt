@@ -1,0 +1,6 @@
+- cursorLineEnd -> alt + ae
+- cursorLineStart -> alt + shift + ae
+- Navigate between tabls -> ctrl + <num of tab>
+- Make new Line above -> ctrl + shift + enter 
+- Make new Line below -> ctrl + enter
+- Github Copilot: Open Completition Panel -> alt + shitf + enter

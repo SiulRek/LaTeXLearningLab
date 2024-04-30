@@ -1,5 +1,15 @@
 // Place your key bindings in this file to override the defaultsauto[]
-[
+[   
+    {
+    "key": "f1", 
+    "command": "workbench.action.tasks.runTask",
+    "args": "Clean Up"
+    },
+    {
+    "key": "f3", 
+    "command": "workbench.action.tasks.runTask",
+    "args": "Test Task"
+    },
     {
         "key": "ctrl+r",
         "command": "editor.action.startFindReplaceAction",
@@ -697,16 +707,6 @@
         "when": "listFocus && !inputFocus && !treestickyScrollFocused"
     },
     {
-        "key": "alt+oem_3",
-        "command": "cursorEndSelect",
-        "when": "textInputFocus"
-    },
-    {
-        "key": "shift+alt+oem_3",
-        "command": "cursorHomeSelect",
-        "when": "textInputFocus"
-    },
-    {
         "key": "ctrl+shift+oem_1",
         "command": "-breadcrumbs.focus",
         "when": "breadcrumbsPossible && breadcrumbsVisible"
@@ -885,5 +885,73 @@
         "key": "ctrl+oem_1",
         "command": "workbench.action.chat.focusInput",
         "when": "inChat && !inChatInput"
+    },
+    {
+        "key": "ctrl+shift+oem_7",
+        "command": "notebook.focusTop",
+        "when": "notebookEditorFocused && !inputFocus"
+    },
+    {
+        "key": "ctrl+shift+oem_7",
+        "command": "workbench.action.terminal.scrollToTopAccessibleView",
+        "when": "accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal' || accessibleViewIsShown && terminalProcessSupported && accessibleViewCurrentProviderId == 'terminal'"
+    },
+    {
+        "key": "ctrl+shift+oem_7",
+        "command": "workbench.action.terminal.scrollToTop",
+        "when": "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && !terminalAltBufferActive"
+    },
+    {
+        "key": "ctrl+shift+oem_7",
+        "command": "cursorTop",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+shift+oem_7",
+        "command": "interactive.scrollToTop",
+        "when": "activeEditor == 'workbench.editor.interactive'"
+    },
+    {
+        "key": "alt+f",
+        "command": "explorer.newFile"
+    },
+    {
+        "key": "alt+d",
+        "command": "explorer.newFolder"
+    },
+    {
+        "key": "ctrl+shift+f4",
+        "command": "workbench.action.closeOtherEditors"
+    },
+    {
+        "key": "ctrl+alt+oem_4",
+        "command": "-latex-workshop.promote-sectioning",
+        "when": "editorTextFocus && !config.latex-workshop.bind.altKeymap.enabled && !editorReadonly && editorLangId =~ /^latex$|^latex-expl3$|^doctex$|^rsweave$|^jlweave$|^pweave$/"
+    },
+    {
+        "key": "alt+oem_3",
+        "command": "cursorLineEnd"
+    },
+    {
+        "key": "shift+alt+oem_3",
+        "command": "cursorLineStart"
+    },
+    {
+        "key": "f1",
+        "command": "-workbench.action.showCommands"
+    },
+    {
+        "key": "alt+t",
+        "command": "workbench.action.tasks.openWorkspaceFileTasks"
+    },
+    {
+        "key": "shift+alt+enter",
+        "command": "github.copilot.generate",
+        "when": "editorTextFocus && github.copilot.activated && !inInteractiveInput && !interactiveEditorFocused"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "-github.copilot.generate",
+        "when": "editorTextFocus && github.copilot.activated && !inInteractiveInput && !interactiveEditorFocused"
     }
 ]
