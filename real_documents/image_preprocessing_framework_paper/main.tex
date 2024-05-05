@@ -29,36 +29,88 @@
 
 
 \section{Introduction}
-\lettrine{T}{his} Good introduction here.
+\lettrine{T}{he} field of computer vision is increasingly prevalent, finding applications in autonomous driving, facial recognition, and medical image analysis. Central to these applications is image preprocessing, which prepares images for subsequent analysis and feature extraction. Effective image preprocessing enhances image quality, facilitates the extraction of relevant features, and accelerates the entire machine learning pipeline.
+
+Despite the importance of image preprocessing, using popular libraries like TensorFlow and OpenCV often presents challenges (\textbf{!!!CITE!!!}):
+\begin{itemize}
+    \item Experimentation with different techniques or parameters is cumbersome due to scattered code.
+    \item Reproducibility is hindered by the lack of straightforward methods to save and load preprocessing pipelines.
+    \item Lack of modularity makes the code tightly coupled with the rest of the codebase, complicating maintenance and updates.
+    \item Integrating preprocessing routines with various machine learning frameworks often requires duplicating code.
+    \item The complexity of existing solutions can be daunting for beginners.
+\end{itemize}
+
+To overcome these challenges, we propose a simple, modular image preprocessing framework that offers high-level abstractions for common preprocessing tasks. Built on OpenCV and TensorFlow, this framework provides a user-friendly API that facilitates experimentation, ensures reproducibility through easy pipeline management, allows for automatic experimantatio and enhances modularity for better integration with diverse machine learning environments. This paper details the design and implementation of our framework and demonstrates its application in a typical computer vision task.
 
 
-\section{Method}
-    \begin{lstlisting}[caption={Python code for image preprocessing}, label=lst:imagepreprocessing]
-    import cv2
-    import numpy as np
-    
-    def load_image(image_path):
-        return cv2.imread(image_path)
-    
-    def resize_image(image, size=(224, 224)):
-        return cv2.resize(image, size)
-    
-    def normalize_image(image):
-        return image / 255.0
-    
-    def preprocess_image(image_path):
-        image = load_image(image_path)
-        image = resize_image(image)
-        image = normalize_image(image)
-        return image
-    
-    # Example usage
-    image_path = 'path/to/your/image.jpg'
-    preprocessed_image = preprocess_image(image_path)
-    \end{lstlisting}
+
+\section{Implementation}
+The image preprocessing framework is developed using Python, leveraging the capabilities of TensorFlow and OpenCV. TensorFlow, a robust machine learning library, provides extensive end-to-end machine learning tools and computational efficiency, allowing for the integration of complex machine learning functionalities. OpenCV is used for its advanced image processing capabilities, offering a range of operations that are not available in TensorFlow, thus enriching the framework's processing abilities.
+
+\subsection{Framework Overview}
+Inspired by the scikit-learn's Pipeline design, our framework enables chaining multiple image processing steps into a cohesive pipeline, specifically tailored for image data. Unlike scikit-learn, which is generally used for tabular data, our framework focuses exclusively on image preprocessing without extending into model training.
+
+The primary objective of the framework is to simplify and streamline the image preprocessing pipeline for computer vision tasks. Specifically, it aims to:
+\begin{itemize}
+    \item Enable easy chaining of multiple image processing steps.
+    \item Facilitate the application of these steps to complete datasets efficiently.
+    \item Allow for straightforward randomization of pipeline configurations, beneficial for hyperparameter optimization.
+    \item Provide simple mechanisms for saving and loading pipelines, enhancing reproducibility and ease of experimentation.
+    \item Ensure the framework is easily extendable with new image processing steps, accommodating evolving requirements and new techniques.
+\end{itemize}
+
+\subsection{Framework Architecture}
+\label{sec:framework_architecture}
+The framework consists of several key classes that drive its functionality:
+\begin{itemize}
+    \item \texttt{ImagePreprocessor} class serves as the central component of the framework. It manages the configuration and execution of the image preprocessing pipeline.
+    \item \texttt{StepBase} class acts as an abstract base class for all preprocessing steps, ensuring consistency and providing common functionalities.
+    \item \texttt{ClassInstancesSerializer} utility class provides methods for serializing and deserializing the pipeline configurations, facilitating reproducibility and experimentation.
+    \item \texttt{Preprocessing Steps} encapsulate specific preprocessing operations within subclasses of \texttt{StepBase}, enhancing the framework's modularity.
+\end{itemize}
+
+The Unified Modeling Language (UML) diagram in Figure~\ref{fig:framework_uml} illustrates the relationships between these classes and their public methods.
+
+\newpage
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{image_preprocessing_uml.png}
+    \caption{UML Diagram of the Image Preprocessing Framework}
+    \label{fig:framework_uml}
+\end{figure}
 
 
-\section{Results}
+\subsection{Preprocessing Operations}
+Each preprocessing operation is encapsulated within a subclass of \texttt{StepBase}, implementing specific functionalities such as adaptive histogram equalization. These classes enhance the framework's modularity, allowing users to easily customize and extend the pipeline. Listing ~\ref{lst:preprocessing_step} demonstrates the implementation of an adaptive histogram equalization step, that can be seamlessly integrated into the preprocessing pipeline. The example showcases the simplicity and straightforwardness of adding new preprocessing steps to the framework.\\
+
+\begin{lstlisting}[language=Python, caption=Example of a Preprocessing Step Implementation, label=lst:preprocessing_step]
+class AdaptiveHistogramEqualizer(StepBase):
+    arguments_datatype = {'clip_limit': float, 'tile_gridsize': (int, int)}
+    name = 'Adaptive Histogram Equalizer'
+
+    def __init__(self, clip_limit=2.0, tile_gridsize=(8,8)):
+        super().__init__(locals())
+
+    @StepBase._nparray_pyfunc_wrapper
+    def process_step(self, image_nparray):
+        channels = cv2.split(image_nparray)
+        clahe = cv2.createCLAHE(clipLimit=self.parameters['clip_limit'],
+                                tileGridSize=self.parameters['tile_gridsize'])
+        clahe_channels = [clahe.apply(ch) for ch in channels]
+        clahe_image = cv2.merge(clahe_channels)
+        return clahe_image
+\end{lstlisting}
+
+\subsection{Testing Strategies of the Framework}
+The robustness of our framework is guaranteed through a comprehensive testing approach utilizing Python's \texttt{unittest} module. Each core class within the framework, as outlined in Section \ref{sec:framework_architecture}, is equipped with its own suite of tests. These tests encompass both unit tests, which scrutinize the functionality of individual methods, and integration tests, which assess the interactions between classes to ensure cohesive operation.
+
+To maintain consistency across the preprocessing steps and avoid duplicative testing efforts, we have developed a unified test suite. This suite is specifically designed to validate the implementation of preprocessing steps and their seamless integration within the framework. It is systematically applied to all preprocessing components to confirm compliance with established standards and to prevent the introduction of errors.
+
+Furthermore, we have implemented a rigorous test scenario known as the "long pipeline test." This test is critical for evaluating the framework's capacity to manage extensive preprocessing pipelines. It involves applying multiple, lengthy pipelines—comprising a significant number of preprocessing steps—to a diverse set of images. The sequence of steps within these pipelines is randomized to confirm the framework's ability to handle various configurations effectively. This test is pivotal in ensuring that even the most complex preprocessing pipelines are processed efficiently and correctly by the framework.
+
+
+
+\section{Application}
 Good Results here.
 
 \section{Discussion}

@@ -1,0 +1,53 @@
+\usepackage{listings}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{caption}
+
+% Define custom colors
+\definecolor{keywordcolor}{rgb}{0,0,0.5}
+\definecolor{stringcolor}{rgb}{0,0.5,0}
+\definecolor{commentcolor}{rgb}{0.5,0.5,0.5}
+\definecolor{classcolor}{rgb}{0.5,0,0}
+\definecolor{modulecolor}{rgb}{0,0.5,0.5}
+\definecolor{functioncolor}{rgb}{0.5,0,0.5}
+\definecolor{captionblue}{RGB}{0, 120, 180}
+\definecolor{captionblack}{RGB}{0, 0, 0}
+
+% Custom commands for specific keyword styling
+\newcommand{\class}[1]{\textcolor{classcolor}{\textbf{#1}}}
+\newcommand{\module}[1]{\textcolor{modulecolor}{\textbf{#1}}}
+\newcommand{\function}[1]{\textcolor{functioncolor}{\textbf{#1}}}
+
+% Setup listings
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{keywordcolor}\textbf,
+  stringstyle=\color{stringcolor},
+  commentstyle=\color{commentcolor},
+  numbers=left,
+  numberstyle=\tiny\color{commentcolor},
+  stepnumber=1,
+  numbersep=5pt,
+  backgroundcolor=\color{white},
+  frame=single,
+  frameround=fttt,
+  framesep=7pt,
+  framexleftmargin=7pt,      
+  framexrightmargin=7pt,     
+  xleftmargin=15pt,          
+  xrightmargin=15pt,     
+  rulecolor=\color{black},
+  tabsize=2,
+  captionpos=b,
+  breaklines=true,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  escapeinside={(*@}{@*)},
+}
+
+\captionsetup[lstlisting]{
+  font={normalfont, bf},
+  labelfont={color=captionblack, bf},
+}
