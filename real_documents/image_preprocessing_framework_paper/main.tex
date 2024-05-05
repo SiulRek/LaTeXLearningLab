@@ -8,6 +8,7 @@
 \usepackage[version=4]{mhchem}
 \usepackage{siunitx}
 \usepackage{longtable,tabularx}
+\usepackage{mylistingstyle}
 \setlength\LTleft{0pt} 
 
 \title{Place a good Title for Image Preprocessing Framework Here}
@@ -22,7 +23,7 @@
 \maketitle
 
 \begin{abstract}
-Make The beautiful abstract here.
+	Make The beautiful abstract here.
 \end{abstract}
 
 
@@ -31,8 +32,37 @@ Make The beautiful abstract here.
 \lettrine{T}{his} Good introduction here.
 
 
-\section{Procedure for Paper Submission}
+\section{Method}
+    \begin{lstlisting}[caption={Python code for image preprocessing}, label=lst:imagepreprocessing]
+    import cv2
+    import numpy as np
+    
+    def load_image(image_path):
+        return cv2.imread(image_path)
+    
+    def resize_image(image, size=(224, 224)):
+        return cv2.resize(image, size)
+    
+    def normalize_image(image):
+        return image / 255.0
+    
+    def preprocess_image(image_path):
+        image = load_image(image_path)
+        image = resize_image(image)
+        image = normalize_image(image)
+        return image
+    
+    # Example usage
+    image_path = 'path/to/your/image.jpg'
+    preprocessed_image = preprocess_image(image_path)
+    \end{lstlisting}
 
+
+\section{Results}
+Good Results here.
+
+\section{Discussion}
+Good Discussion here.
 
 \section{Conclusion}
 Good coclusion here.
