@@ -953,5 +953,26 @@
         "key": "ctrl+enter",
         "command": "-github.copilot.generate",
         "when": "editorTextFocus && github.copilot.activated && !inInteractiveInput && !interactiveEditorFocused"
+    },
+    {
+        "key": "shift+f9",
+        "command": "-editor.debug.action.toggleInlineBreakpoint",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+f9",
+        "command": "editor.debug.action.editBreakpoint"
+    },
+    {
+        "key": "alt+oem_1",
+        "command": "workbench.action.navigateToLastNavigationLocation"
+    },
+    {
+        "key": "shift+alt+oem_1",
+        "command": "workbench.action.navigateToLastEditLocation"
+    },
+    {
+        "key": "ctrl+k ctrl+q",
+        "command": "-workbench.action.navigateToLastEditLocation"
     }
 ]

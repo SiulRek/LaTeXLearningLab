@@ -4,3 +4,6 @@
 - Make new Line above -> ctrl + shift + enter 
 - Make new Line below -> ctrl + enter
 - Github Copilot: Open Completition Panel -> alt + shitf + enter
+- Edit Breakpoint -> shift + f9
+- Navigate to last edit location -> alt + shift + ue 
+- Navigate to last cursor location -> alt + ue
