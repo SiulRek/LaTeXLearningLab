@@ -7,3 +7,4 @@
 - Edit Breakpoint -> shift + f9
 - Navigate to last edit location -> alt + shift + ue 
 - Navigate to last cursor location -> alt + ue
+- Toggle Minimap -> ctrl + shift + p than Toggle Minimap
