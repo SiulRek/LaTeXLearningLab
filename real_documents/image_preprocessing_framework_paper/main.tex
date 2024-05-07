@@ -12,7 +12,9 @@
 \usepackage{longtable}
 \setlength\LTleft{0pt} 
 
-\title{Place a good Title for Image Preprocessing Framework Here}
+\title{Streamlined Image Preprocessing Framework for Computer Vision Applications %\\[10pt]
+%\normalsize\textit{\today}  % Smaller font size and italics for the date
+}
 
 \author{Author: Luis Kraker\footnote{BsC, Master's student in System Test Engineering, FH-Joanneum}}
 \affil{FH-Joanneum, Graz 8020, Austria}
@@ -22,9 +24,12 @@
 \begin{document}
 
 \maketitle
+% \begin{center}
+% 	\today
+% \end{center}
 
 \begin{abstract}
-	Make The beautiful abstract here. The abstract moves on to the next sentence. It than moves on to the following sentence and than moves on and on and on. The abstract will not finish neither today not tomorrow it is incredibily long, unexpactedly long. It is so long that it will never finish. Wow, we are going to finish. End.
+This paper introduces a modular image preprocessing framework designed to streamline the setup and application of preprocessing pipelines in computer vision tasks. Leveraging the robust functionalities of TensorFlow and OpenCV, our framework offers a user-friendly interface that simplifies experimentation and enhances reproducibility. We detail the framework's architecture, which supports easy integration and extension with new preprocessing techniques, and demonstrate its application with a simple example. By simplifying the preprocessing process, our framework not only improves the efficiency of data preparation but also allows practitioners to focus more on model innovation and less on routine data manipulation.
 \end{abstract}
 
 
@@ -32,7 +37,7 @@
 \lettrine{T}{he} field of computer vision is increasingly prevalent, significantly impacting both industry and daily life. It enhances consumer multimedia experiences, operates household robotics, streamlines manufacturing processes, aids in medical diagnostics and treatments, and powers autonomous vehicles.\cite{bebis2002review} Beyond these applications, computer vision continues to expand into new areas, further integrating into our everyday experiences.\cite{szeliski2010computer}
 
 
-Central to these applications is image preprocessing, which prepares images for subsequent analysis and feature extraction.\cite{gonzalez2002digital} Effective image preprocessing enhances image quality, facilitates the extraction of relevant features, and accelerates the entire machine learning pipeline driving computer vision applications.\cite{nelson2020image}\cite{krig2014image}
+Central to these applications is image preprocessing, which prepares images for subsequent analysis and feature extraction.\cite{gonzalez2002digital} Effective image preprocessing improves image quality, facilitates the extraction of relevant features, and accelerates the entire machine learning pipeline driving computer vision applications.\cite{nelson2020image}\cite{krig2014image}
 
 Despite the importance of image preprocessing, using popular libraries like TensorFlow (\cite{tensorflow2015}) and OpenCV (\cite{opencv2000}) without high-level abstraction often presents challenges:
 \begin{itemize}
@@ -64,12 +69,13 @@ The primary objective of the framework is to simplify and streamline the image p
 
 \subsection{Framework Architecture}
 \label{sec:framework_architecture}
-The framework consists of several key classes that drive its functionality:
+Our framework uses a carefully chosen architecture that promotes straightforwardness, efficiency and modularity. To achieve these goals, the framework is built around several core components, each fulfilling a unique role in the pipeline. The primary components of the framework are as follows:
+
 \begin{itemize}
 	\item \texttt{ImagePreprocessor} class serves as the central component of the framework. It manages the configuration and execution of the image preprocessing pipeline.
 	\item \texttt{StepBase} class acts as an abstract base class for all preprocessing steps, ensuring consistency and providing common functionalities.
 	\item \texttt{ClassInstancesSerializer} class provides methods for serializing and deserializing the pipeline configurations, facilitating reproducibility and experimentation.
-	\item \texttt{Preprocessing Steps} encapsulate specific preprocessing operations within subclasses of \texttt{StepBase}, improving the framework's modularity.
+	\item \texttt{Preprocessing Steps} encapsulate specific preprocessing operations within subclasses of \texttt{StepBase}, enhancing the framework's modularity.
 \end{itemize}
 
 % The simplified Unified Modeling Language (UML) diagram in Figure~\ref{fig:framework_uml} illustrates the relationships between these classes and their public methods.
@@ -84,7 +90,7 @@ The framework consists of several key classes that drive its functionality:
 % \newpage
 
 \subsection{Preprocessing Operations}
-Each preprocessing operation is encapsulated within a subclass of \texttt{StepBase}, implementing specific functionalities such as adaptive histogram equalization. These classes enhance the framework's modularity, allowing users to easily customize and extend the pipeline. Listing ~\ref{lst:preprocessing_step} demonstrates the implementation of an adaptive histogram equalization step, that can be seamlessly integrated into the preprocessing pipeline. The example shows the simplicity and straightforwardness of adding new preprocessing steps to the framework.\\
+Each preprocessing operation is encapsulated within a subclass of \texttt{StepBase}, implementing specific functionalities such as adaptive histogram equalization. These classes highlight the framework's modularity, allowing users to easily customize and extend the pipeline. Listing ~\ref{lst:preprocessing_step} demonstrates the implementation of an adaptive histogram equalization step, that can be seamlessly integrated into the preprocessing pipeline. The example shows the simplicity of adding new preprocessing steps to the framework.\\
 
 \begin{lstlisting}[language=Python, caption=Example of a Preprocessing Step Implementation, label=lst:preprocessing_step]
 class AdaptiveHistogramEqualizer(StepBase):
@@ -105,11 +111,11 @@ class AdaptiveHistogramEqualizer(StepBase):
 \end{lstlisting}
 
 \subsection{Serialization and Deserialization}
-The framework offers a straightforward method for serializing and deserializing the preprocessing pipeline configuration, facilitated by the \texttt{ClassInstancesSerializer} class. This class handles the conversion of the pipeline configuration into a JSON format and back, taking advantage of JSON's readability, editability, and hierarchical organization, which suits the pipeline's structure. The \texttt{ClassInstancesSerializer} also manages the datatypes of the pipeline parameters to ensure they are compatible with JSON formatting. It is responsible for converting the parameters of the preprocessing steps into a format that can be serialized in JSON and for restoring the original datatypes upon deserialization. This is why it's necessary to define the parameter datatypes in the \texttt{arguments\_datatype} class variable when constructing a preprocessing step class (see listing ~\ref{lst:preprocessing_step}). The \texttt{ImagePreprocessor} class, in conjunction with the \texttt{ClassInstancesSerializer}, handles the serialization and deserialization processes.
+The framework offers a direct method for serializing and deserializing the preprocessing pipeline configuration, enabled by  the \texttt{ClassInstancesSerializer} class. This class handles the conversion of the pipeline configuration into a JSON format and back, taking advantage of JSON's readability, editability, and hierarchical organization, which suits the pipeline's structure. The \texttt{ClassInstancesSerializer} also manages the datatypes of the pipeline parameters to ensure they are compatible with JSON formatting. It is responsible for converting the parameters of the preprocessing steps into a format that can be serialized in JSON and for restoring the original datatypes upon deserialization. To serialize new preprocessing steps, simply define the parameter datatypes in the \texttt{arguments\_datatype} class variable, and the \texttt{ImagePreprocessor} in conjunction with the \texttt{ClassInstancesSerializer} will handle the serialization and deserialization accordingly.
 
 
 \subsection{Testing Strategies of the Framework}
-The reliability of our framework is supported by a detailed testing strategy that uses Python's \texttt{unittest} module.\cite{unittestPython} Each main class within the framework, as detailed in Section \ref{sec:framework_architecture}, has its own set of tests. These include unit tests, which examine the functionality of individual methods, and integration tests, which evaluate how well the classes work together.
+The reliability of our framework is supported by a detailed testing strategy that uses Python's \texttt{unittest} module.\cite{unittestPython} Each main class within the framework, as detailed in section \ref{sec:framework_architecture}, has its own set of tests. These include unit tests, which verify the functionality of individual methods, and integration tests, which evaluate how well the classes work together.
 
 To ensure uniformity across the preprocessing steps and minimize redundant testing efforts, we have established a common test suite. This suite is designed to check the correctness of the preprocessing steps and their integration within the framework. It is consistently used across all preprocessing components to maintain standards and prevent errors.
 
@@ -117,13 +123,13 @@ Additionally, we provide a thorough testing scenario called the "long pipeline t
 
 
 \section{Application}
-The Image Preprocessing framework facilitates a straightforward and intuitive process for setting up and applying image preprocessing pipelines.
+Given the detailed implementation described, the image preprocessing framework provides a user-friendly and intuitive process for setting up and applying image preprocessing pipelines.
 
 \subsection{Setting Up the Preprocessing Pipeline}
 The steps to configure the preprocessing pipeline are outlined below:
 
 \begin{enumerate}
-	\item Instanciate the \texttt{ImagePreprocessor} class.
+	\item Instantiate the \texttt{ImagePreprocessor} class.
 	\item Construct the preprocessing pipeline by specifying the sequence of desired preprocessing steps.
 	\item Set the configured pipeline to the \texttt{ImagePreprocessor} instance.
 	\item Finally, apply the pipeline to the image dataset for processing.
@@ -187,16 +193,17 @@ A summary of the currently implemented preprocessing operations, categorized by 
 	\textbf{Normalization}                & Min Max Normalizer, Standard Normalizer, Mean Normalizer, Local Contrast Normalizer                                                                  \\
 	\hline
 	\textbf{Random Augmentations}         & Random Color Jitterer, Random Sharpening, Random Rotator, Random Flipper, Random Cropper, Random Perspective Transformer, Random Elastic Transformer \\
+	\hline
 	\textbf{Miscellaneous}                & TypeCaster, Clipper, Scaler                                                                                                                          \\
 	\hline
 \end{longtable}
 
 \subsection{Randomization of the Preprocessing Pipeline}
-The framework offers a method to randomize the configurations of the preprocessing pipeline, which is useful for exploring the effects of different preprocessing settings on image datasets. This functionality is beneficial for hyperparameter optimization and various experimental scenarios. Users can specify potential values or distributions for each parameter within the JSON configuration, and the framework will randomly select from these options during the application of the pipeline.
+The framework offers a method to randomize the configurations of the preprocessing pipeline, which is useful for exploring the effects of different preprocessing settings on image datasets. This functionality is beneficial for hyperparameter optimization and various experimental scenarios. Users can specify ranges or distributions for each parameter within the JSON configuration, and the framework will randomly sample from these options during the application of the pipeline.
 
 
 \section{Discussion}
-The Image Preprocessing Framework is specifically tailored to work with TensorFlow's image dataset format. This limitation results from the decision to manage the pipeline's processing by using TensorFlow's computational efficiencies. Despite this limitation, the integration of TensorFlow and OpenCV in the framework design provides an environment that is easy to use, modular, and extensible, supporting a broad range of preprocessing operations.
+The image preprocessing framework is specifically tailored to work with TensorFlow's image dataset format. This limitation results from the decision to manage the pipeline's processing by using TensorFlow's computational efficiencies. Despite this limitation, the integration of TensorFlow and OpenCV in the framework design provides an environment that is easy to use, modular, and extensible, supporting a broad range of preprocessing operations.
 
 It is important to note that the framework does not include capabilities for learning or optimizing the parameters of preprocessing steps automatically. Instead, it focuses solely on preprocessing tasks to prepare data for subsequent model training, without involving model training itself. This separation ensures that the framework remains streamlined and efficient for its designated preprocessing functions.
 
@@ -206,8 +213,8 @@ Overall, the framework provides a robust solution for managing image preprocessi
 
 
 
-\section*{Acknowledgments}
-Good Acknowledgments here.
+% \section*{Acknowledgments}
+% Good Acknowledgments here.
 
 \bibliography{sample}
 
