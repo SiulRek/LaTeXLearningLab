@@ -29,7 +29,7 @@
 % \end{center}
 
 \begin{abstract}
-This paper introduces a modular image preprocessing framework designed to streamline the setup and application of preprocessing pipelines in computer vision tasks. Leveraging the robust functionalities of TensorFlow and OpenCV, our framework offers a user-friendly interface that simplifies experimentation and enhances reproducibility. We detail the framework's architecture, which supports easy integration and extension with new preprocessing techniques, and demonstrate its application with a simple example. By simplifying the preprocessing process, our framework not only improves the efficiency of data preparation but also allows practitioners to focus more on model innovation and less on routine data manipulation.
+This paper introduces a modular Python-based image preprocessing framework, designed to streamline the setup and application of preprocessing pipelines in computer vision tasks. Leveraging the robust functionalities of TensorFlow (\cite{tensorflow2015}) and OpenCV (\cite{opencv2000}), our framework offers a user-friendly interface that simplifies experimentation and enhances reproducibility. We detail the framework's architecture, which supports easy integration and extension with new preprocessing techniques, and demonstrate its application with a simple example. By simplifying the preprocessing process, our framework not only improves the efficiency of data preparation but also allows practitioners to focus more on model innovation and less on routine data manipulation.
 \end{abstract}
 
 
@@ -48,7 +48,7 @@ Despite the importance of image preprocessing, using popular libraries like Tens
 	\item The complexity of existing solutions can be frustrating for beginners.
 \end{itemize}
 
-To overcome these challenges, we propose a simple, modular image preprocessing framework that offers a streamlined interface for common preprocessing tasks.  Built on OpenCV and TensorFlow, this framework provides a beginner-friendly Application Programming Interface (API) that facilitates experimentation, ensures reproducibility through easy pipeline management, allows for automatic experimentation and improves modularity for better integration with diverse machine learning environments. Leveraging Python as the programming language it guarantees broad accessibility and seamless integration with existing projects.\cite{python}\cite{pythonCV} This paper details the design and implementation of our framework and includes a practical demonstration of its capabilities.
+To overcome these challenges, we propose a simple, modular image preprocessing framework that offers a streamlined interface for common preprocessing tasks. Building on this foundation, the framework provides a beginner-friendly Application Programming Interface (API) that facilitates experimentation, ensures reproducibility through easy pipeline management, allows for automatic experimentation and improves modularity for better integration with diverse machine learning environments. Leveraging Python as the programming language it guarantees broad accessibility and seamless integration with existing projects.\cite{python}\cite{pythonCV} The framework's GitHub repository is publicly accessible for review.\cite{repo2024} This paper details the design and implementation of our framework and includes a practical demonstration of its capabilities.
 
 
 \section{Implementation}
@@ -134,7 +134,11 @@ The steps to configure the preprocessing pipeline are outlined below:
 	\item Set the configured pipeline to the \texttt{ImagePreprocessor} instance.
 	\item Finally, apply the pipeline to the image dataset for processing.
 \end{enumerate}
+
 This procedure is illustrated in Listing~\ref{lst:application_example}.
+
+\newpage
+
 \begin{lstlisting}[language=Python, caption=Example of Applying the Image Preprocessing Pipeline, label=lst:application_example]
 # Initialize the Image Preprocessor
 preprocessor = ImagePreprocessor()
@@ -214,7 +218,12 @@ Overall, the framework provides a robust solution for managing image preprocessi
 
 
 % \section*{Acknowledgments}
-% Good Acknowledgments here.
+% I would like to thank Mrs. Gudrun Schappacher-Tilp for her guidance and feedback throughout this project. Her supervision has provided me with the confidence needed to pursue my work with assurance.
+% 
+% I extend my gratitude to Mr. Egon Teiniker for instructing me in test-driven software development, to Mr. Wolfgang Rominger for educating me in Python-based programming, and to Mr. Anreas Kemperle for his instruction in modular programming through object-oriented design. Without their foundational teachings the realization of this framework would not have been possible.
+% 
+% Additionally, I am grateful to my family and friends for their continuous trust and encouragement in my continuous quest for knowledge and personal growth.
+% 
 
 \bibliography{sample}
 
